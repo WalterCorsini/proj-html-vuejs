@@ -1,8 +1,7 @@
-
 <script>
 import AppButton from "../components/AppButton.vue";
 export default {
-    components: {
+    component:{
         AppButton,
     },
     data() {
@@ -61,9 +60,8 @@ export default {
             <div class="hero-text">
                 <div class="small-container">
                     <h3>{{ curElem.title }}</h3>
-                    <p>{{ curElem.subTitle }}</p>
+                    <span>{{ curElem.subTitle }}</span>
                 </div>
-                <Appbutton />
             </div>
             </div>
         </div>
@@ -76,6 +74,7 @@ export default {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+        <AppButton title="REGISTER NOW" />
     </div>
 
     <!-- /section 1 -->
@@ -96,26 +95,27 @@ export default {
                 left: 0;
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
             }
             .hero-text{
-                position: fixed;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                position: relative;
+                z-index: 1;
                 width: 100%;
-                height: 50%;
+                height: 100%;
                 color: white;
                 text-align: center;
                 .small-container{
                     width: 70%;
-                    h3{
-                        font-size: 40px;
+                    .h3{
+                        font-size: 30px;
                         font-weight: bold;
                     }
                     span{
                         font-size: 20px;
-                        font-weight: 200;
                     }
                 }
             }

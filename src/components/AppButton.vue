@@ -16,6 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 div {
+    position: relative;
+    z-index: 100;
     background-color: blue;
     padding: 10px 20px;
     margin-bottom: 10px;
