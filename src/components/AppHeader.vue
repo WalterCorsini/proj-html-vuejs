@@ -22,7 +22,11 @@ export default{
 </script>
 
 <template>
-      header
+  <!-- test -->
+  <router-link :to="{name: menu[1].routeName}" >
+      {{ menu[1].title }}
+  </router-link>
+  <!-- /test -->
 </template>
 
 <style scoped lang="scss">
