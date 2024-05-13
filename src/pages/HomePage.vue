@@ -1,7 +1,7 @@
 <script>
 import AppButton from "../components/AppButton.vue";
 export default {
-    component:{
+    components:{
         AppButton,
     },
     data() {
@@ -31,6 +31,8 @@ export default {
             return new URL(`../assets/img/home-page/sezione-1/${elem}.jpg`, import.meta.url).href;
         },
         changeActivePlus() {
+            //  inserire set interval per andare in avanti e stoppare il set che va indietro
+            //  se è gia attivo lo metto in pausa
             console.log(this.active);
             if (this.active <= 1) {
                 this.active++;
@@ -39,6 +41,8 @@ export default {
             }
         },
         changeActiveLess() {
+            //  inserire set interval per andare indietro e stoppare il set che va in avanti
+            //  se è gia attivo lo metto in pausa
             console.log(this.active);
             if (this.active >= 1) {
                 this.active--;
@@ -61,20 +65,23 @@ export default {
                 <div class="small-container">
                     <h3>{{ curElem.title }}</h3>
                     <span>{{ curElem.subTitle }}</span>
+                    <div class="btn">
+                        <AppButton title="REGISTER NOW" />
+                    </div>
                 </div>
             </div>
-            </div>
         </div>
-        <button @click="changeActiveLess" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button @click="changeActivePlus" class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        <AppButton title="REGISTER NOW" />
+    </div>
+    <button @click.prevent.stop="changeActiveLess" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button @click.prevent.stop="changeActivePlus" class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    <AppHeader />
+</button>
     </div>
 
     <!-- /section 1 -->
@@ -82,6 +89,16 @@ export default {
 
 <style scoped lang="scss">
 #container-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .carousel-inner{
         position: relative;
         width: 100%;
@@ -115,7 +132,11 @@ export default {
                         font-weight: bold;
                     }
                     span{
+                        display: block;
                         font-size: 20px;
+                    }
+                    .btn{
+                        margin-top: 10px;
                     }
                 }
             }
