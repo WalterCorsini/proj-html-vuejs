@@ -44,7 +44,7 @@ export default {
 <style scoped lang="scss">
 .container {
     border-top: 1px solid rgb(201, 201, 201);
-
+    --bs-gutter-x: 0 ;
     span{
         font-size: 10px;
     }

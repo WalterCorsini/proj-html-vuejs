@@ -51,7 +51,6 @@ export default{
         </div>
     </div>
     <!-- /section icon -->
-
     
 
     <Transition name="fade">
