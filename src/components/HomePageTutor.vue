@@ -52,9 +52,24 @@ export default{
     </div>
     <!-- /section icon -->
 
+    
+
+    <Transition name="fade">
+  </Transition>
+
 </template>
 
 <style scoped lang="scss">
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
     .container{
         width: 100%;
         .col-2{
