@@ -4,61 +4,66 @@ export default {
         return {
                 arrayCard:[
                     {
-                        img: "_1",
+                        img: "1",
+                        title:"Business English",
+                        name:"Nome Cognome",
+                        text:"tante parole dette a caso senza senzo servono solo per riempire la card",
+                    },
+                    {
+                        img: "2",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_2",
+                        img: "3",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_3",
+                        img: "4",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_4",
+                        img: "5",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_5",
+                        img: "6",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_6",
+                        img: "7",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_6",
+                        img: "8",
                         title:"",
                         name:"",
                         text:"",
                     },
                     {
-                        img: "_7",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "",
+                        img: "9",
                         title:"",
                         name:"",
                         text:"",
                     },
                 ]
         }
+    },
+    methods:{
+        getImage(elem) {
+            return new URL(`../assets/img/home-page/sezione-7/${elem}.jpg`, import.meta.url).href;
+        }, 
     }
 }
 </script>
@@ -66,28 +71,32 @@ export default {
 <template>
     <div class="container-fluid">
         <img src="../assets/img/home-page/sfondo-rombi.png" alt="">
-        <div class="container-absolute text-center">
+        <div class="container-absolute">
             <div class="container-online-courses d-flex flex-column align-items-center jutify-content-center pt-5">
-                <h2>titolo</h2>
-                <p>
+                <span class="title text-center">Popular Online Courses</span>
+                <p class="text-center">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At aspernatur dolorem beatae tenetur quis?
                     Incidunt praesentium, quibusdam id voluptate ipsam corporis sequi voluptatem explicabo magni culpa
                     in quisquam. Aperiam, ipsa.
                 </p>
                 <div class="container-card d-flex gap-3 justify-content-around">
-                    <div class="card-courses">
+                    <!--  non visualizza tutte e 9 le card. -->
+                    <div v-for="curCard,index in arrayCard" class="card-courses">
                             <div>
-                                <!-- img -->
+                                <img :src="getImage(curCard.img)" alt="">
                             </div>
-                            <div>
-                                <!-- text  -->
+                            <div class="align-left" v-for="curCard,index in arrayCard">
+                                <span class="title-card"> {{ curCard.title }}</span>
+                                <span class="text-card"> {{ curCard.name }}</span>
+                                <span class="text-card"> {{ curCard.text }}</span>
                             </div>
-                    </div>
-                    <div class="card-courses">
-                            dd
-                    </div>
-                    <div class="card-courses">
-                            dd
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                                0
+                                <i class="fa-solid fa-tag"></i>
+                                programming
+                            </span>
+                            
                     </div>
                 </div>
             </div>
@@ -110,14 +119,38 @@ export default {
         left: 0;
 
         .container-online-courses {
-            width: 60%;
+            overflow-x:scroll;
+            width: 70%;
             margin: 0 auto;
+            .title{
+                font-family: serif;
+                font-weight: bold;
+                font-size: 40px;
+                
+            }
+            p{
+                color: grey;
+            }
             .container-card{
-                width: 140%;
+                margin-top: 50px;
                 .card-courses {
-                    width: calc(100% / 3);
-                    height: 45vh;
-                    border: 1px solid black;
+                    padding: 10px;
+                    width: calc(800px / 3);
+                    height: 55vh;
+                    border: 1px solid lightgray;
+                    span{
+                        display: block;
+                    }
+                    .title-card{
+                        font-weight: bold;
+                        font-family: serif;
+                        font-size: 18px;
+                    }
+                    .text-card,i,span{
+                        margin: 5px 0;
+                        font-size: 12px;
+                        color: grey;
+                    }
                 }
             }
         }
