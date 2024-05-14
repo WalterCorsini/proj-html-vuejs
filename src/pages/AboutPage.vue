@@ -1,8 +1,56 @@
 <script>
+import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
 export default {
+    components: { AboutPageTutorCard },
     data() {
         return {
-
+            tutorsArray: [
+                {
+                    name: "Edward Bowman",
+                    role: "Associate Professor",
+                    img: "-1"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Assistant Professor",
+                    img: "-2"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Teaching Assistant",
+                    img: "-3"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Associate Professor",
+                    img: "-4"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Teaching Assistant",
+                    img: "-5"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Assistant Professor",
+                    img: "-6"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Associate Professor",
+                    img: "-7"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Teaching Assistant",
+                    img: "-8"
+                },
+                {
+                    name: "Edward Bowman",
+                    role: "Professor",
+                    img: "-9"
+                }
+            ]
         }
     }
 }
@@ -43,6 +91,22 @@ export default {
             <div class="video">
                 <!-- Debug -->
                 <img src="../assets/img/about-page/test.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutors Section -->
+    <section class="tutors-section">
+        <div class="container">
+            <div class="tutors-title text-center">
+                <h2>Top tutors in every subjects</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, officiis atque adipisci ipsam nulla vero dolorem cupiditate.</p>
+            </div>
+            <div class="row">
+                <div class="col-4" v-for="tutor in tutorsArray">
+                    <!-- Card -->
+                    <AboutPageTutorCard :cardObj="tutor"/>
+                </div>
             </div>
         </div>
     </section>
@@ -102,4 +166,11 @@ export default {
 
     }
 }
+
+.tutors-section{
+    border: 1px solid gray;
+    padding: 40px 0;
+
+}
+
 </style>
