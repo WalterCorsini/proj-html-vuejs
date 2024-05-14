@@ -43,7 +43,7 @@ export default {
                 <div v-for="curElem in arrayTutors" class="card-container d-flex flex-column justify-content-center align-items-center gap-2">
                     <img :src="getImage(curElem.img)" alt="">
                     <span class="name">{{ curElem.name }}</span>
-                    <span class="role">{{ curElem.role }}</span>
+                    <span class="fw-bold">{{ curElem.role }}</span>
                     <span>{{ curElem.text }}</span>
                     <span class="d-flex gap-3">
                         <i class="fa-brands fa-twitter"></i>
@@ -81,8 +81,5 @@ span{
     font-size: 20px;
     font-family: serif;
     font-weight: 600;
-}
-.role{
-    font-weight: 700;
 }
 </style>
