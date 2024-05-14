@@ -131,50 +131,42 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
 .cell-elem {
     width: calc(100% / 4);
 }
 
-li {
-    height: 60px;
-    padding: 10px;
-    border: 1px solid black;
-    text-align: center;
-}
 td{
-    color: #808080;
+    color: $grey;
 }
 th{
-    border-top: 3px solid #D6F2FF;
+    border-top: 3px solid $lightgrey;
 }
 th.professional{
-    border-top: 3px solid  #17B7FE;
+    border-top: 3px solid  $primary-color;
     
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-}
 .text-blue{
-    color: #17B7FE;
+    color: $primary-color;
 }
 .btn-info{
-    color: white;
-    background-color:#17B7FE;
+    color: $white;
+    background-color:$primary-color;
     &:hover{
-        background-color: #17a2dd;
+        background-color: $dark-primary;
     }    
 }
 .btn-outline-info{
-    color: #808080;
-    border-color: #17B7FE;
+    color: $grey;
+    border-color: $primary-color;
     &:hover{
-        background-color:#17B7FE;
-        color: white;
+        background-color:$dark-primary;
+        color: $white;
     }
 }
 .bg-lightblue{
-    background-color:#F7FDFF;
+    background-color:$lightgrey;
 }
 </style>

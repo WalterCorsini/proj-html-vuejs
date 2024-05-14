@@ -56,9 +56,10 @@ export default {
 <template>
 
     <!-- da usare il carosello -->
-    <div class="container-fluid">
-        <img class="background" src="../assets/img/home-page/globo.png" alt="">
-        <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople" class="card">
+    <div class="container-fluid w-100 d-flex flex-column justify-content-center align-items-center text-center">
+        <img class="background w-100 h-100" src="../assets/img/home-page/globo.png" alt="">
+        <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople"
+        class="card d-flex justify-content-center align-items-center h-100 p-2">
 
             <img :src="getImage(curElem.img)" alt="">
             <p>{{ curElem.text }}</p>
@@ -87,35 +88,24 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 .container-fluid {
     position: relative;
-    width: 100%;
     height: 50vh;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 100px;
 
     .background {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
     }
 
     .card {
-        color: white;
+        color: $white;
         background-color: transparent;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 80%;
-        height: 100%;
-        padding: 20px;
         --bs-card-border-width: 0;
 
         img {

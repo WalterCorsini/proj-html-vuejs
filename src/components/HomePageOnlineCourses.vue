@@ -70,23 +70,24 @@ export default {
 
 <template>
     <div class="container-fluid">
-        <img src="../assets/img/home-page/sfondo-rombi.png" alt="">
-        <div class="container-absolute">
-            <div class="container-online-courses pt-5">
-                <span class="title text-center">Popular Online Courses</span>
+        <img class="w-100" src="../assets/img/home-page/sfondo-rombi.png" alt="sfondo-sezione">
+        <div class="container-absolute w-100">
+            <div class="container-online-courses pt-5 m-auto
+            d-flex flex-column justify-content-center align-items-center">
+                <span class="title fw-bold text-center">Popular Online Courses</span>
                 <p class="text-center">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At aspernatur dolorem beatae tenetur quis?
                     Incidunt praesentium, quibusdam id voluptate ipsam corporis sequi voluptatem explicabo magni culpa
                     in quisquam. Aperiam, ipsa.
                 </p>
-                <div class="container-card d-flex gap-3 justify-content-around">
+                <div class="container-card d-flex gap-3 mt-5 justify-content-around">
                     <!--  non visualizza tutte e 9 le card. -->
-                    <div v-for="curCard,index in arrayCard" class="card-courses">
+                    <div v-for="curCard,index in arrayCard" class="card-courses p-1">
                             <div>
                                 <img :src="getImage(curCard.img)" alt="">
                             </div>
                             <div class="align-left" v-for="curCard,index in arrayCard">
-                                <span class="title-card"> {{ curCard.title }}</span>
+                                <span class="title-card fw-bold"> {{ curCard.title }}</span>
                                 <span class="text-card"> {{ curCard.name }}</span>
                                 <span class="text-card"> {{ curCard.text }}</span>
                             </div>
@@ -105,58 +106,44 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 .container-fluid {
     position: relative;
     max-width: 100%;
 
-    img {
-        width: 100%;
-    }
-
     .container-absolute {
-        width: 100%;
         position: absolute;
         top: 0;
         left: 0;
 
         .container-online-courses {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             width: 70%;
-            margin: 0 auto;
             .title{
                 font-family: serif;
-                font-weight: bold;
                 font-size: 40px;
                 
             }
             p{
-                color: grey;
+                color: $grey;
             }
             .container-card{
-                overflow-x:scroll;
                 width: 140%;
-                border: 1px solid black;
-                margin-top: 50px;
                 .card-courses {
-                    padding: 10px;
                     width: calc(100% / 3);
                     height: 55vh;
-                    border: 1px solid lightgray;
+                    border: 1px solid grey;
                     span{
                         display: block;
                     }
                     .title-card{
-                        font-weight: bold;
                         font-family: serif;
                         font-size: 18px;
                     }
                     .text-card,i,span{
                         margin: 5px 0;
                         font-size: 12px;
-                        color: grey;
+                        color: $grey;
                     }
                 }
             }

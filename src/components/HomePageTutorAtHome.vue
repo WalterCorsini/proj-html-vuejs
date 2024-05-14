@@ -20,42 +20,40 @@ export default {
                     ipsa tenetur illum.
                 </span>
                 <span class="mt-3">
-                    <a href="">SAPERNE DI PIU'</a>
+                    <a class="d-block" href="">SAPERNE DI PIU'</a>
                 </span>
             </div>
             <div class="col-7">
-                <img src="../assets/img/home-page/_3.jpg" alt="">
+                <img class="w-100" src="../assets/img/home-page/_3.jpg" alt="">
             </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 .container {
     .row{
         --bs-gutter-x: 0 ;
-    }
-    span{
-        font-size: 10px;
-    }
-    span:last-child {
-        font-family: sans-serif;
-        font-weight: 800;
-        font-size: 12px;
-        display: block;
-        cursor: pointer;
-        a {
-            text-decoration: none;
-            color: #40C4FF;
+        span{
+            font-size: 10px;
         }
-        &:hover::after {
-            content: " >";
-            color: #40C4FF;
+        span:last-child {
+            font-family: sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            cursor: pointer;
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                &:hover::after {
+                    content: " >";
+                    color: $primary-color;
+                }
+            }
+            
         }
-
     }
-    img{
-        width:100%;
-    };
 }
 </style>

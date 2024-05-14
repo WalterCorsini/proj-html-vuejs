@@ -25,16 +25,16 @@ export default {
                 </span>
                 <div class="d-flex justify-content-around">
                     <div class="count">
-                        <span class="mt-5 d-flex flex-column">
+                        <div class="mt-5 d-flex flex-column">
                             <a href="">168</a>
                             <span>Storie degli utenti</span>
-                        </span>
+                        </div>
                     </div>
                     <div class="count">
-                        <span class="mt-5 d-flex flex-column">
+                        <div class="mt-5 d-flex flex-column">
                             <a href="">347</a>
                             <span>Eventi</span>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,8 +43,10 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 .container {
-    border-top: 1px solid rgb(201, 201, 201);
+    border-top: 1px solid $grey;
 
     span {
         font-size: 10px;
@@ -52,12 +54,11 @@ export default {
     img{
         width: 80%;
     }
-    .count span:first-child {
+    .count div:first-child {
         font-family: serif;
         font-size: 36px;
-        color: #40C4FF;
+        color: $primary-color;
         font-weight: 700;
-        display: block;
         cursor: pointer;
 
         span {
@@ -66,7 +67,7 @@ export default {
 
         a {
             text-decoration: none;
-            color: #40C4FF;
+            color: $primary-color;
         }
     }
 

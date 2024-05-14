@@ -87,17 +87,17 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container mb-1">
         <div v-for="curElem, index in listArray" class="row">
             <div @click.stop="active = index" class="col-3">
-                <span >
-                    {{ curElem.name}}
+                <span class="d-block">
+                    {{ curElem.name }}
                 </span>
             </div>
-            <div v-if="active === index" class="col-9 info">
+            <div v-if="active === index" class="col-9 info h-100 p-2">
                 <h2>{{ curElem.title }}</h2>
                 <p>{{ curElem.text }}</p>
-                <div class="list d-flex align-items-end">
+                <div class="list d-flex align-items-end w-100">
                     <div class="list-item col-8">
                         <span v-for="curItem, index in curElem.list"><i class="fa-solid fa-check"></i> {{ curItem
                             }}</span>
@@ -112,60 +112,57 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
 .container {
     position: relative;
-    margin-bottom: 10px;
-}
 
-span,
-p {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgb(146, 146, 146);
-    ;
-}
-
-.col-3 span {
-    border: 1px solid rgb(209, 209, 209);
-    display: block;
-    padding: 15px;
-    transition: 0.5s;
-    font-size: 12px;
-    font-weight: 500;
-    color: rgb(146, 146, 146);
-
-    &:hover {
-        transition: 1s;
-        color: #31A2D6;
-        border-left: 8px solid #31A2D6;
+    span,
+    p {
+        font-size: 12px;
+        font-weight: 500;
+        color: $grey;
     }
-}
 
+    .col-3 span {
+        border: 1px solid $lightgrey;
+        padding: 15px;
+        transition: 0.5s;
+        font-size: 12px;
+        font-weight: 500;
+        color: $grey;
 
-.info {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 20px;
-    height: 100%;
-    
-    span {
-        display: block;
-        margin: 10px;
-        
-        i {
-            color: #31A2D6;
-        }
-    }
-    
-    .list {
-        width: 100%;
-        height: 60%;
-        position: relative;
-        img {
-            width: 80px;
+        &:hover {
+            transition: 1s;
+            color: $primary_color;
+            border-left: 8px solid $primary_color;
         }
     }
 
+
+    .info {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        span {
+            display: block;
+            margin: 10px;
+
+            i {
+                color: $primary-color;
+            }
+        }
+
+        .list {
+            height: 60%;
+            position: relative;
+
+            img {
+                width: 80px;
+            }
+        }
+
+    }
 }
 </style>

@@ -56,13 +56,17 @@ export default {
 
 <template>
     <!-- section 1 -->
-    <div id="container-hero" class="carousel slide">
+    <div id="container-hero" 
+    class="carousel slide h-100 w-100
+    d-flex flex-column justify-content-center align-items-center">
         <div class="carousel-inner">
-            <div v-for="curElem, index in arrayImgSection1" class="carousel-item"
+            <div v-for="curElem, index in arrayImgSection1" class="carousel-item h-100 w-100"
             :class="active === index ? 'active' : ''">
-            <img :src="getImage(curElem.img)" class="d-block w-100" alt="...">
-            <div class="hero-text">
-                <div class="small-container">
+            <img :src="getImage(curElem.img)" class="d-block w-100 h-100" alt="...">
+            <div class="hero-text
+            d-flex flex-column justify-content-center align-items-center
+            text-center w-100 h-100">
+                <div class="small-container w-50">
                     <h2><strong>{{ curElem.title }}</strong></h2>
                     <span>{{ curElem.subTitle }}</span>
                     <div class="btn">
@@ -87,42 +91,26 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 #container-hero {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
     .carousel-inner{
         position: relative;
         width: 100%;
-        height: 300px;
+        height: 50vh;
         .carousel-item{
-                width: 100%;
-                height: 100%;
             img{
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
                 object-fit: cover;
             }
             .hero-text{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 position: relative;
                 z-index: 1;
-                width: 100%;
-                height: 100%;
-                color: white;
-                text-align: center;
+                color: $white;
                 .small-container{
-                    width: 50%;
                     .span{
                             font-family: ui-rounded;
                             font-weight: bold;
