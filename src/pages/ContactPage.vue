@@ -1,10 +1,13 @@
 <script>
 import ContactJumbotron from "../components/ContactJumbotron.vue";
 import ContactOfficeAndForm from "../components/ContactOfficeAndForm.vue";
+import ContactMap from "../components/ContactMap.vue";
+
 export default{
     components: {
         ContactJumbotron,
-        ContactOfficeAndForm
+        ContactOfficeAndForm,
+        ContactMap,
     },
     data(){
         return{
@@ -18,12 +21,10 @@ export default{
 <main>
     <ContactJumbotron />
     <ContactOfficeAndForm />
+    <ContactMap />
 </main>
 </template>
 
 <style scoped lang="scss">
-main {
-    background-image: url(../assets/img/contact_and_footer/contact-1.jpg);
-}
 
 </style>
