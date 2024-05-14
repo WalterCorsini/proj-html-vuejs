@@ -6,6 +6,8 @@ import HomePageChildren from "../components/HomePageChildren.vue";
 import HomePageStudent from "../components/HomePageStudent.vue";
 import HomePageWhatWeDo from "../components/HomePageWhatWeDo.vue";
 import HomePageOnlineCourses from "../components/HomePageOnlineCourses.vue";
+import HomePageBestTutor from "../components/HomePageBestTutor.vue";
+
 
 
 export default {
@@ -17,6 +19,7 @@ export default {
         HomePageStudent,
         HomePageWhatWeDo,
         HomePageOnlineCourses,
+        HomePageBestTutor,
     },
     data() {
         return {
@@ -34,6 +37,7 @@ export default {
     <HomePageStudent />
     <HomePageWhatWeDo />
     <HomePageOnlineCourses />
+    <HomePageBestTutor />
 </template>
 
 <style scoped lang="scss">

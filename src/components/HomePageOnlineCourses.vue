@@ -72,7 +72,7 @@ export default {
     <div class="container-fluid">
         <img src="../assets/img/home-page/sfondo-rombi.png" alt="">
         <div class="container-absolute">
-            <div class="container-online-courses d-flex flex-column align-items-center jutify-content-center pt-5">
+            <div class="container-online-courses pt-5">
                 <span class="title text-center">Popular Online Courses</span>
                 <p class="text-center">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At aspernatur dolorem beatae tenetur quis?
@@ -107,6 +107,7 @@ export default {
 <style scoped lang="scss">
 .container-fluid {
     position: relative;
+    max-width: 100%;
 
     img {
         width: 100%;
@@ -119,7 +120,10 @@ export default {
         left: 0;
 
         .container-online-courses {
-            overflow-x:scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 70%;
             margin: 0 auto;
             .title{
@@ -132,10 +136,13 @@ export default {
                 color: grey;
             }
             .container-card{
+                overflow-x:scroll;
+                width: 140%;
+                border: 1px solid black;
                 margin-top: 50px;
                 .card-courses {
                     padding: 10px;
-                    width: calc(800px / 3);
+                    width: calc(100% / 3);
                     height: 55vh;
                     border: 1px solid lightgray;
                     span{

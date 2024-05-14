@@ -5,7 +5,7 @@ export default {
             active: 0,
             listArray: [
                 {
-                    img: "../assets/img/home-page/sezione-6/_1",
+                    img: "_1",
                     name: "What We Do",
                     title: "Learning Possibilities",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -17,7 +17,7 @@ export default {
                         ],
                 },
                 {
-                    img: "../assets/img/home-page/sezione-6/_2",
+                    img: "_2",
                     name: "Degree Program",
                     title: "Inspiring Minds",
                     text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -28,7 +28,7 @@ export default {
                     ],
                 },
                 {
-                    img: "../assets/img/home-page/sezione-6/_3",
+                    img: "_3",
                     name: "Career Achievements",
                     title: "Investing in Knowledge",
                     text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -40,7 +40,7 @@ export default {
                     ],
                 },
                 {
-                    img: "../assets/img/home-page/sezione-6/_4",
+                    img: "_4",
                     name: "Personal Management",
                     title: "Secure Your Future",
                     text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -52,7 +52,7 @@ export default {
                     ],
                 },
                 {
-                    img: "../assets/img/home-page/sezione-6/_5",
+                    img: "_5",
                     name: "Steps To Success",
                     title: "Where Learning Begins",
                     text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -64,7 +64,7 @@ export default {
                     ],
                 },
                 {
-                    img: "../assets/img/home-page/sezione-6/_6",
+                    img: "_6",
                     name: "Knowledge Transfer",
                     title: "Knowledge is Power",
                     text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
@@ -80,7 +80,7 @@ export default {
     },
     methods: {
         getImage(elem) {
-            return new URL(`${elem}.png`, import.meta.url).href;
+            return new URL(`../assets/img/home-page/sezione-6/${elem}.png`, import.meta.url).href;
         }
     }
 }
