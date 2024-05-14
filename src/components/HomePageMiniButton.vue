@@ -3,7 +3,7 @@ export default{
     data(){
         return{
             props:{
-                text: String,
+                textbutton: String
             }
         }
     }    
@@ -12,7 +12,7 @@ export default{
 
 <template>
     <div class="px-3 py-2">
-        {{ text }}
+        {{ textbutton }}
     </div>
 </template>
 
@@ -21,7 +21,6 @@ div{
     width: 30px;
     height: 10px;
     border-radius: 20px;
-    background-color: red;
     color: white;
 }
 
