@@ -7,14 +7,24 @@
     box-sizing: border-box;
 }
 
+.container-fluid{
+    --bs-gutter-x: 0;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
 }
 
 img{
     max-width: 100%;
+    --bs-gutter-x: 0;
+
 }
 
 li {
     list-style-type: none;
+}
+
+.title-font {
+    font-family: "Merriweather" , serif;
 }
