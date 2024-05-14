@@ -69,19 +69,19 @@ export default {
                 <form class="row g-3 p-4">
                     <div class="col-md-6">
                         <label for="name" class="form-label">Name</label>
-                        <input type="email" class="form-control border border-0 bg-body-tertiary" id="name">
+                        <input type="email" class="form-control border-0 bg-body-tertiary shadow-none" id="name">
                     </div>
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email</label>
-                        <input type="password" class="form-control border border-0 bg-body-tertiary" id="email">
+                        <input type="password" class="form-control border border-0 bg-body-tertiary shadow-none" id="email">
                     </div>
                     <div class="col-12">
                         <label for="website" class="form-label">Website</label>
-                        <input type="text" class="form-control border border-0 bg-body-tertiary" id="website">
+                        <input type="text" class="form-control border border-0 bg-body-tertiary shadow-none" id="website">
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control border border-0 bg-body-tertiary" id="message" rows="3"></textarea>
+                        <textarea class="form-control border border-0 bg-body-tertiary shadow-none" id="message" rows="3"></textarea>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Sign in</button>
@@ -99,9 +99,6 @@ a {
     color: inherit;
 }
 
-input {
-    outline: none;
-}
 
 ul {
     padding: 0;
