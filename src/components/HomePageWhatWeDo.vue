@@ -89,9 +89,10 @@ export default {
 <template>
     <div class="container">
         <div v-for="curElem, index in listArray" class="row">
-            <div class="col-3">
-                <span @click.stop="active = index" :class="active === index ? 'clickItem' : ''">{{ curElem.name
-                    }}</span>
+            <div @click.stop="active = index" class="col-3">
+                <span >
+                    {{ curElem.name}}
+                </span>
             </div>
             <div v-if="active === index" class="col-9 info">
                 <h2>{{ curElem.title }}</h2>
@@ -132,7 +133,6 @@ p {
     font-size: 12px;
     font-weight: 500;
     color: rgb(146, 146, 146);
-    ;
 
     &:hover {
         transition: 1s;
@@ -141,10 +141,6 @@ p {
     }
 }
 
-.clickItem {
-    color: #31A2D6;
-    border-left: 8px solid #31A2D6;
-}
 
 .info {
     position: absolute;
@@ -152,16 +148,16 @@ p {
     right: 0;
     padding: 20px;
     height: 100%;
-
+    
     span {
         display: block;
         margin: 10px;
-
+        
         i {
             color: #31A2D6;
         }
     }
-
+    
     .list {
         width: 100%;
         height: 60%;

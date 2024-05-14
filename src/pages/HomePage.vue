@@ -8,6 +8,7 @@ import HomePageWhatWeDo from "../components/HomePageWhatWeDo.vue";
 import HomePageOnlineCourses from "../components/HomePageOnlineCourses.vue";
 import HomePageBestTutor from "../components/HomePageBestTutor.vue";
 import HomePagePricing  from "../components/HomePagePricing.vue"
+import HomePageLogoSlider from "../components/HomePageLogoSlider.vue";
 
 
 
@@ -22,6 +23,7 @@ export default {
         HomePageOnlineCourses,
         HomePageBestTutor,
         HomePagePricing,
+        HomePageLogoSlider,
     },
     data() {
         return {
@@ -41,6 +43,7 @@ export default {
     <HomePageOnlineCourses />
     <HomePageBestTutor />
     <HomePagePricing />
+    <HomePageLogoSlider />
 </template>
 
 <style scoped lang="scss">

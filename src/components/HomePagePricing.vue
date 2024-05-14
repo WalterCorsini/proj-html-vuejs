@@ -36,7 +36,7 @@ export default {
 
 <template>
     <!-- /tabella -->
-    <div class="container">
+    <div class="container p-5">
         <table class="table table-bordered w-100 text-center">
             <thead>
                 <tr>
