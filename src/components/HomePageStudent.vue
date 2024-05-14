@@ -56,7 +56,7 @@ export default {
 <template>
 
     <!-- da usare il carosello -->
-    <div class="container">
+    <div class="container-fluid">
         <img class="background" src="../assets/img/home-page/globo.png" alt="">
         <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople" class="card">
 
@@ -64,6 +64,12 @@ export default {
             <p>{{ curElem.text }}</p>
             <p>{{ curElem.name }}</p>
             <p>{{ curElem.role }}</p>
+            <div class="d-flex gap-3">
+            <i @click.stop="active=0" :class="active === 0 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
+            <i @click.stop="active=1" :class="active === 1 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
+            <i @click.stop="active=2" :class="active === 2 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
+            </div>
+            
 
         </div>
         <button @click.prevent.stop="changeActiveLess" class="carousel-control-prev" type="button"
@@ -81,7 +87,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.container {
+.container-fluid {
     position: relative;
     width: 100%;
     height: 50vh;

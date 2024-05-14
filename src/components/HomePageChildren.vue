@@ -66,5 +66,8 @@ export default {
     img{
         width:100%;
     };
+    .row .col-7{
+        margin-bottom:0;
+    }
 }
 </style>
