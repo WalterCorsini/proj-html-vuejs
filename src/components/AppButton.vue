@@ -16,21 +16,20 @@ export default {
 
 <style lang="scss" scoped>
 div {
-    position: relative;
-    z-index: 100;
-    background-color: blue;
-    padding: 10px 20px;
+    background-color: #40C4FF;
+    padding: 20px 40px;
     margin-bottom: 10px;
     text-align: center;
     transition: 1s;
 
     &:hover {
-        transform: scale(1.1);
-        border-radius: 20px;
-        transition: 1s;
+        background-color: #00aeff;
     }
 
     a {
+        text-decoration: none;
+        font-weight: bold;
+        font-family: sans-serif;
         color: white;
     }
 }
