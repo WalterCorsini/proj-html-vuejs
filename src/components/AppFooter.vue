@@ -44,7 +44,7 @@ export default {
                 <p class="pb-4">Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer to Home</p>
         
                 <!-- contatti e orari -->
-                <div class="text-white">
+                <div class="text-white ms_num_time">
                     <ul>
                         <li class="mb-3">
                             <i class="fa-solid fa-phone"></i>
@@ -103,7 +103,11 @@ export default {
 footer {
     background-color: rgb(34 34 34);
     color: #cbcbcb;
-    padding: 100px 0 50px;
+    padding-top: 70px;
+
+    .row {
+        padding: 50px 0;
+    }
 
     .ms_blue-hover:hover,
     li:hover > i {
@@ -133,6 +137,16 @@ footer {
 
     img.ms_logo {
         width: 150px;
+    }
+
+    h4, h5 {
+        font-family: Merriweather,serif;
+        font-weight: 700;
+    }
+
+    .ms_num_time {
+        font-weight: 600;
+        font-size: 12px;
     }
 }
 
