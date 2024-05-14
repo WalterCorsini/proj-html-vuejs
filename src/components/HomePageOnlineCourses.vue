@@ -1,62 +1,66 @@
 <script>
+import HomePageMiniButton from "./HomePageMiniButton.vue";
 export default {
+    components:{
+        HomePageMiniButton,
+    },
     data() {
         return {
                 arrayCard:[
                     {
                         img: "1",
-                        title:"Business English",
-                        name:"Nome Cognome",
+                        title:"Modern Psycology",
+                        name:"Kathryn Webb",
                         text:"tante parole dette a caso senza senzo servono solo per riempire la card",
                     },
                     {
                         img: "2",
-                        title:"",
-                        name:"",
-                        text:"",
+                        title:"Learn Spanish",
+                        name:"Jennie King",
+                        text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     },
                     {
                         img: "3",
-                        title:"",
-                        name:"",
-                        text:"",
+                        title:"Social Computing",
+                        name:"Davide Sanders",
+                        text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     },
-                    {
-                        img: "4",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "5",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "6",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "7",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "8",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
-                    {
-                        img: "9",
-                        title:"",
-                        name:"",
-                        text:"",
-                    },
+                    // {
+                    //     img: "4",
+                    //     title:"Android Developer",
+                    //     name:"David Sanders",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
+                    // {
+                    //     img: "5",
+                    //     title:"Web Designin",
+                    //     name:"Jennifer Powell",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
+                    // {
+                    //     img: "6",
+                    //     title:"Basic Marketing",
+                    //     name:"Edward Bowman",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
+                    // {
+                    //     img: "7",
+                    //     title:"Financial Modeliing",
+                    //     name:"Edward Bowman",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
+                    // {
+                    //     img: "8",
+                    //     title:"Academic English",
+                    //     name:"Dave Robbins",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
+                    // {
+                    //     img: "9",
+                    //     title:"Business English",
+                    //     name:"Preston Marshall",
+                    //     text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    // },
                 ]
         }
     },
@@ -82,11 +86,9 @@ export default {
                 </p>
                 <div class="container-card d-flex gap-3 mt-5 justify-content-around">
                     <!--  non visualizza tutte e 9 le card. -->
-                    <div v-for="curCard,index in arrayCard" class="card-courses p-1">
-                            <div>
+                    <div v-for="curCard,index in arrayCard" class="card-courses d-flex flex-column justify-content-between p-1">
+                            <div class="align-left">
                                 <img :src="getImage(curCard.img)" alt="">
-                            </div>
-                            <div class="align-left" v-for="curCard,index in arrayCard">
                                 <span class="title-card fw-bold"> {{ curCard.title }}</span>
                                 <span class="text-card"> {{ curCard.name }}</span>
                                 <span class="text-card"> {{ curCard.text }}</span>
@@ -97,6 +99,7 @@ export default {
                                 <i class="fa-solid fa-tag"></i>
                                 programming
                             </span>
+                            <HomePageMiniButton  text="$20"/>
                             
                     </div>
                 </div>
@@ -128,10 +131,10 @@ export default {
                 color: $grey;
             }
             .container-card{
-                width: 140%;
+                width: 100%;
                 .card-courses {
                     width: calc(100% / 3);
-                    height: 55vh;
+                    height: 60vh;
                     border: 1px solid grey;
                     span{
                         display: block;
