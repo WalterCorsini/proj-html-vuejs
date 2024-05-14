@@ -52,6 +52,7 @@ export default {
             content: " >";
             color: #40C4FF;
         }
+
     }
     img{
         width:100%;
