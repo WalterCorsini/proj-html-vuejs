@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <header class="container mt-4">
+  <header class="container">
     <div class="header-logo">
       <img src="../assets/img/header/logo.png" alt="Logo iAcademy" />
     </div>
@@ -42,11 +42,16 @@ export default {
 
 .container {
   @include flex(row, space-between, center, nowrap);
+  padding: 40px 0;
 
+  .header-logo{
+    width: 200px;
+  }
 
   .navigation {
     @include flex(row, center, center, nowrap);
     gap: 20px;
+    margin-bottom: 0;
   }
 }
 
