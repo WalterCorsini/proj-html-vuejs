@@ -66,8 +66,5 @@ export default {
     img{
         width:100%;
     };
-    .count{
-
-    }
 }
 </style>
