@@ -18,9 +18,9 @@ export default{
 
   <AppHeader />
 
+  <router-view></router-view>
+  
   <AppFooter />
-
-<router-view></router-view>
 </template>
 
 <style scoped>

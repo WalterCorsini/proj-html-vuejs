@@ -1,3 +1,6 @@
+<!-- TODO: add router to links-->
+<!-- TODO: upgrade the hover adding transition time -->
+
 <script>
 export default {
     data() {
@@ -80,6 +83,18 @@ export default {
         <!-- bottom footer -->
         <hr>
 
+        <div class="row ms_bottom_footer">
+            <div class="col-7"><a href="#">© 2017 Qode Interactive, All Rights Reserved</a></div>
+            <div class="col-2 text-center">CALL +44 300 303 0266</div>
+            <div class="col-2 text-center">FOLLOW US</div>
+            <div class="col">
+                <ul class="d-flex justify-content-between">
+                    <li><a href="#"><i class="fa-brands fa-twitter ms_blue-hover"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram ms_blue-hover"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f ms_blue-hover"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
 </template>
@@ -88,24 +103,28 @@ export default {
 footer {
     background-color: rgb(34 34 34);
     color: #cbcbcb;
-    padding: 100px 0;
+    padding: 100px 0 50px;
 
     .ms_blue-hover:hover,
     li:hover > i {
         color: #40c4ff;
     }
 
-    .ms_grey-hover:hover {
+    .ms_grey-hover:hover{
         color: #606264;
+    }
+
+    .ms_bottom_footer {
+        font-size: 0.8rem;
     }
 
     ul {
         padding: 0;
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    a {
+        color: inherit;
+        text-decoration: none;
     }
     
     img.ms_map {
@@ -114,10 +133,6 @@ footer {
 
     img.ms_logo {
         width: 150px;
-    }
-
-    hr {
-        border: 1px solid white;
     }
 }
 
