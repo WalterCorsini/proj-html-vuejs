@@ -64,7 +64,7 @@ export default {
             <p>{{ curElem.text }}</p>
             <p>{{ curElem.name }}</p>
             <p>{{ curElem.role }}</p>
-            
+
         </div>
         <button @click.prevent.stop="changeActiveLess" class="carousel-control-prev" type="button"
             data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -77,6 +77,7 @@ export default {
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    
 </template>
 
 <style scoped lang="scss">
@@ -109,6 +110,7 @@ export default {
         width: 80%;
         height: 100%;
         padding: 20px;
+        --bs-card-border-width: 0;
 
         img {
             width: 80px;
