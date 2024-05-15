@@ -31,6 +31,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../style/partials/variables" as *;
 
 .container-fluid{
     padding:100px;
@@ -48,11 +49,11 @@ export default {
 span{
     display: block;
     font-size: 12px;
-    color: grey;
+    color: $grey;
 }
 
 .name{
-    color: black;
+    color: $black;
     font-size: 20px;
     font-family: serif;
     font-weight: 600;

@@ -44,6 +44,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/variables" as *;
+
 .container-fluid {
     position: relative;
     max-width: 100%;
@@ -60,7 +62,7 @@ export default {
             }
 
             p {
-                color: grey;
+                color: $grey;
             }
 
             .container-card {
@@ -69,7 +71,7 @@ export default {
                 .card-courses {
                     width: calc(100% / 3);
                     height: 60vh;
-                    border: 1px solid lightgrey;
+                    border: 1px solid $lightgrey;
 
                     .card-text {
                         position: relative;
@@ -95,7 +97,7 @@ export default {
                     span {
                         margin: 5px 0;
                         font-size: 12px;
-                        color: grey;
+                        color: $grey;
                     }
                 }
             }
@@ -105,17 +107,17 @@ export default {
             }
 
             .grey {
-                color: grey;
+                color: $grey;
             }
 
             .lightgrey {
-                color: lightgray;
+                color: $lightgrey;
             }
         
     }
 
     button {
-        color: black;
+        color: $black;
     }
 
 }
