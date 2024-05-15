@@ -129,12 +129,20 @@ export default {
                     </div>
                 </div>
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
+
+                    <i @click.stop="active = 1, getString(active)" :class="active===1 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa-solid"></i>
+                    <i @click.stop="active = 2, getString(active)" :class="active===2 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa solid"></i>
+                    <i @click.stop="active = 3, getString(active)" :class="active===3 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa-solid"></i>
+
+                    <!-- <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'"
-                        class="fa-circle"></i>
+                        class="fa-circle"></i> -->
                 </div>
             </div>
         </div>
@@ -204,7 +212,13 @@ export default {
             }
 
             .icon {
+               font-size: 50px;
+            }
+            .grey{
                 color: $grey;
+            }
+            .lightgrey{
+                color: lightgray;
             }
         }
     }
