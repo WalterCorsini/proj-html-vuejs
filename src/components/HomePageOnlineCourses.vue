@@ -48,24 +48,24 @@ export default {
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                 },
             ],
-            arrayCard3:[
+            arrayCard3: [
                 {
                     img: "7",
-                    title:"Financial Modeliing",
-                    name:"Edward Bowman",
-                    text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    title: "Financial Modeliing",
+                    name: "Edward Bowman",
+                    text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                 },
                 {
                     img: "8",
-                    title:"Academic English",
-                    name:"Dave Robbins",
-                    text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    title: "Academic English",
+                    name: "Dave Robbins",
+                    text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                 },
                 {
                     img: "9",
-                    title:"Business English",
-                    name:"Preston Marshall",
-                    text:"Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    title: "Business English",
+                    name: "Preston Marshall",
+                    text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                 },
             ],
 
@@ -76,17 +76,17 @@ export default {
         getImage(elem) {
             return new URL(`../assets/img/home-page/sezione-7/${elem}.jpg`, import.meta.url).href;
         },
-        getString(number){
-            if(number === 1){
+        getString(number) {
+            if (number === 1) {
                 this.arrayActive = this.arrayCard1;
-            } else if(number === 2){
+            } else if (number === 2) {
                 this.arrayActive = this.arrayCard2;
             } else {
                 this.arrayActive = this.arrayCard3;
             }
         }
     },
-    created(){
+    created() {
         this.arrayActive = this.arrayCard1;
     }
 }
@@ -109,10 +109,16 @@ export default {
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
                         <div class="align-left">
-                        <img :src="getImage(curCard.img)" alt="">
-                            <span class="title-card fw-bold"> {{ curCard.title }}</span>
-                            <span class="text-card"> {{ curCard.name }}</span>
-                            <span class="text-card"> {{ curCard.text }}</span>
+                            <img :src="getImage(curCard.img)" alt="">
+                            <div class="card-text">
+                                <span class="title-card fw-bold"> {{ curCard.title }}</span>
+                                <span class="text-card"> {{ curCard.name }}</span>
+                                <span class="text-card"> {{ curCard.text }}</span>
+                                <div class="bnt-price">
+                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12" color="rgb(64, 196, 255)" />
+                                    <HomePageMiniButton v-if="index === 1" title="$ 24" color="rgb(255, 215, 64)" />
+                                </div>
+                            </div>
                         </div>
                         <span>
                             <i class="fa-solid fa-user"></i>
@@ -123,10 +129,13 @@ export default {
                     </div>
                 </div>
                 <div class="icon d-flex gap-3 p-5">
-            <i @click.stop="active=1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
-            <i @click.stop="active=2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
-            <i @click.stop="active=3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
-            </div>
+                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
+                        class="fa-circle"></i>
+                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'"
+                        class="fa-circle"></i>
+                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'"
+                        class="fa-circle"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -165,6 +174,16 @@ export default {
                     height: 60vh;
                     border: 1px solid lightgrey;
 
+                    .card-text {
+                        position: relative;
+
+                        div {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+
                     span {
                         display: block;
                     }
@@ -183,10 +202,12 @@ export default {
                     }
                 }
             }
-            .icon{
-                color: $grey;    
+
+            .icon {
+                color: $grey;
             }
         }
     }
+
 }
 </style>

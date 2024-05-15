@@ -1,27 +1,39 @@
 <script>
-export default{
-    data(){
-        return{
-            props:{
-                textbutton: String
-            }
-        }
-    }    
+export default {
+    props: {
+        title: String,
+        color: String,
+    }
 }
 </script>
 
 <template>
-    <div class="px-3 py-2">
-        {{ textbutton }}
+    <div class="mb-1 d-flex justify-content-center align-items-center"
+     :style="{'background-color' : `${color}`}">
+        <a class="fw-bold" @click.prevent href="">
+            {{ title }}
+        </a>
     </div>
 </template>
 
 <style lang="scss" scoped>
-div{
-    width: 30px;
-    height: 10px;
-    border-radius: 20px;
-    color: white;
-}
+@use "../style/partials/variables" as *;
 
+div {
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 1s;
+
+    &:hover {
+    }
+
+    a {
+        text-decoration: none;
+        font-family: sans-serif;
+        color: $white;
+        font-size: 8px;
+    }
+}
 </style>
