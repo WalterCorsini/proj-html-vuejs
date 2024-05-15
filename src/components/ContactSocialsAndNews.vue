@@ -5,11 +5,11 @@ export default {
 </script>
 
 <template>
-    <div class="container py-5">
+    <div class="container py-5 ms_fs">
         <div class="row justify-content-between text-center">
             <div class="col">
-                <h5>Sbuscribe to Newsletter</h5>
-                <p>Get updates for New Classes</p>
+                <h6 class="title-font">Subscribe to Newsletter</h6>
+                <p class="text-secondary">Get updates for New Classes</p>
             </div>
             <div class="col">
                 <div class="border row p-3">
@@ -19,7 +19,7 @@ export default {
             </div>
             <div class="col">
                 <div class="d-flex justify-content-center">
-                    <span class="px-2">Follow Us:</span>
+                    <h6 class="title-font px-2">Follow Us:</h6>
                     <ul class="d-flex justify-content-between p-0 m-0">
                         <li class="px-2"><a href="#"><i class="fa-brands fa-twitter ms_blue-hover"></i></a></li>
                         <li class="px-2"><a href="#"><i class="fa-brands fa-instagram ms_blue-hover"></i></a></li>
@@ -27,14 +27,14 @@ export default {
                     </ul>
                 </div>
                 <div>
-                    <p>We want to hear from you</p>
+                    <p class="text-secondary">We want to hear from you!</p>
                 </div>
             </div>
             <div class="col">
-                <div>
+                <h6 class="title-font">
                     Call Us: <span class="c-b">060 777 9999</span>
-                </div>
-                <div>
+                </h6>
+                <div class="text-secondary">
                     Do not hesitate tu contact us
                 </div>
             </div>
@@ -48,10 +48,16 @@ input:focus {
     outline: none;
 }
 
+.ms_fs {
+    font-size: 12px;
+}
+
 .ms_blue-hover:hover,
 .c-b {
         color: #40c4ff;
 }
+
+
 
 a {
     text-decoration: none;
