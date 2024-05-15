@@ -1,9 +1,11 @@
 <script>
 import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
 import AboutPageQuotes from '../components/AboutPageQuotes.vue'
+import AboutPageFaq from '../components/AboutPageFaq.vue'
+
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes },
+    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq },
     data() {
         return {
             tutorsArray: [
@@ -116,6 +118,11 @@ export default {
     <!-- Quotes Section -->
     <section>
         <AboutPageQuotes />
+    </section>
+
+    <!-- Faq section -->
+    <section>
+        <AboutPageFaq />
     </section>
 
 </template>
