@@ -33,8 +33,13 @@ export default {
             ],
         }
     },
+    created() {
+        this.changeActive("P");
+    },
     methods: {
         changeActive(value) {
+            clearInterval(this.stopInterval);
+            this.stopInterval = setInterval(() => {
             if (value === "P") {
                 if (this.active <= 1) {
                     this.active++;
@@ -48,6 +53,7 @@ export default {
                     this.active = 2;
                 }
             }
+        }, 2000)
         },
     }
 }

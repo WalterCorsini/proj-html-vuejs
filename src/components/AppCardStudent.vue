@@ -10,7 +10,7 @@ export default{
     },
     methods:{
         getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-5/${elem}.png`, import.meta.url).href;
+            return new URL(`${elem}`, import.meta.url).href;
         },
     }
 }
