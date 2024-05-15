@@ -28,6 +28,16 @@ export default {
             ]
         }
     },
+    created() {
+        setInterval(() => {
+        if (this.active <= 1) {
+                this.active++;
+            } else {
+                this.active = 0;
+            }
+        console.log(this.active);
+        }, 5000)
+    },
     methods: {
         // to take dynamic image
         getImage(elem) {
