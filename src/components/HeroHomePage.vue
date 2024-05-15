@@ -6,6 +6,7 @@ export default {
     },
     data() {
         return {
+            stopInterval:"",
             // active variable
             active: 0,
             // array photo and text
@@ -29,14 +30,7 @@ export default {
         }
     },
     created() {
-        setInterval(() => {
-        if (this.active <= 1) {
-                this.active++;
-            } else {
-                this.active = 0;
-            }
-        console.log(this.active);
-        }, 5000)
+        this.changeActive("P");
     },
     methods: {
         // to take dynamic image
@@ -45,8 +39,8 @@ export default {
         },
         // change active elem next
         changeActive(value) {
-            //  inserire set interval per andare in avanti e stoppare il set che va indietro
-            //  se è gia attivo lo metto in pausa
+            clearInterval(this.stopInterval);
+            this.stopInterval = setInterval(() => {
             if (value === "P") {
                 if (this.active <= 1) {
                     this.active++;
@@ -60,6 +54,7 @@ export default {
                 this.active = 2;
             }
             }
+        }, 3000)
         },
     }
 }

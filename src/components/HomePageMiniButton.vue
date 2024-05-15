@@ -1,7 +1,7 @@
 <script>
 export default {
     props: {
-        title: String,
+        price: String,
         color: String,
     }
 }
@@ -11,7 +11,7 @@ export default {
     <div class="mb-1 d-flex justify-content-center align-items-center"
         :style="{'background-color' : `${color}`}">
         <a class="fw-bold" @click.prevent href="">
-            {{ title }}
+            {{ price }}
         </a>
     </div>
 </template>

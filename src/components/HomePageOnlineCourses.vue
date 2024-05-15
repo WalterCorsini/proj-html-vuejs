@@ -1,8 +1,10 @@
 <script>
 import HomePageMiniButton from "./HomePageMiniButton.vue";
+import AppCard from "./AppCard.vue";
 export default {
     components: {
         HomePageMiniButton,
+        AppCard,
     },
     data() {
         return {
@@ -14,18 +16,24 @@ export default {
                     title: "Modern Psycology",
                     name: "Kathryn Webb",
                     text: "tante parole dette a caso senza senzo servono solo per riempire la card",
+                    color: "green",
+                    price: "12$"
                 },
                 {
                     img: "2",
                     title: "Learn Spanish",
                     name: "Jennie King",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "gold",
+                    price: "25$"
                 },
                 {
                     img: "3",
                     title: "Social Computing",
                     name: "Davide Sanders",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "red",
+                    price: "34$"
                 },
             ],
             arrayCard2: [
@@ -34,18 +42,24 @@ export default {
                     title: "Android Developer",
                     name: "David Sanders",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "red",
+                    price: "35$"
                 },
                 {
                     img: "5",
                     title: "Web Designin",
                     name: "Jennifer Powell",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "gold",
+                    price: "22$"
                 },
                 {
                     img: "6",
                     title: "Basic Marketing",
                     name: "Edward Bowman",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "green",
+                    price: "15$"
                 },
             ],
             arrayCard3: [
@@ -54,18 +68,24 @@ export default {
                     title: "Financial Modeliing",
                     name: "Edward Bowman",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "green",
+                    price: "10$"
                 },
                 {
                     img: "8",
                     title: "Academic English",
                     name: "Dave Robbins",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "red",
+                    price: "50$"
                 },
                 {
                     img: "9",
                     title: "Business English",
                     name: "Preston Marshall",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
+                    color: "green",
+                    price: "19$"
                 },
             ],
 
@@ -73,9 +93,9 @@ export default {
         }
     },
     methods: {
-        getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-7/${elem}.jpg`, import.meta.url).href;
-        },
+    //     getImage(elem) {
+    //         return new URL(`../assets/img/home-page/sezione-7/${elem}.jpg`, import.meta.url).href;
+    //     },
         getString(number) {
             if (number === 1) {
                 this.arrayActive = this.arrayCard1;
@@ -113,9 +133,10 @@ export default {
                     <!-- visualizza le 9 card ma non come nell'esempio usare  https://swiperjs.com/ -->
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
-                        <div class="align-left">
+                        <AppCard :propCard="curCard" />
+                        <!-- <div class="align-left">
                             <img :src="getImage(curCard.img)" alt="">
-                            <div class="card-text">
+                            <div class="card-text ms-1">
                                 <span class="title-card fw-bold"> {{ curCard.title }}</span>
                                 <span class="text-card"> {{ curCard.name }}</span>
                                 <span class="text-card"> {{ curCard.text }}</span>
@@ -126,12 +147,12 @@ export default {
                                 </div>
                             </div>
                         </div>
-                        <span>
+                        <span class="ms-2">
                             <i class="fa-solid fa-user"></i>
                             0
                             <i class="fa-solid fa-tag"></i>
                             programming
-                        </span>
+                        </span> -->
                     </div>
 
                     <!-- button previous and next -->
@@ -186,10 +207,6 @@ export default {
     position: relative;
     max-width: 100%;
 
-    .container-absolute {
-        position: absolute;
-        top: 0;
-        left: 0;
 
         .container-online-courses {
             width: 70%;
@@ -253,7 +270,7 @@ export default {
                 color: lightgray;
             }
         }
-    }
+    
     button{
         color: $black;
     }
