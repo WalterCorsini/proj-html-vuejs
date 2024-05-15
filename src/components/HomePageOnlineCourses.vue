@@ -120,7 +120,8 @@ export default {
                                 <span class="text-card"> {{ curCard.name }}</span>
                                 <span class="text-card"> {{ curCard.text }}</span>
                                 <div class="bnt-price">
-                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12" color="rgb(64, 196, 255)" />
+                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12"
+                                        color="rgb(64, 196, 255)" />
                                     <HomePageMiniButton v-if="index === 1" title="$ 24" color="rgb(255, 215, 64)" />
                                 </div>
                             </div>
@@ -132,30 +133,44 @@ export default {
                             programming
                         </span>
                     </div>
+
+                    <!-- button previous and next -->
+                    <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button @click.prevent.stop="changeActive(P)" class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <!-- button previous and next -->
+
                 </div>
                 <!-- container card -->
 
                 <!-- icon slider -->
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString(active)" :class="active===1 ? 'grey' : 'lightgrey'"
+                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'grey' : 'lightgrey'"
                         class="fa-minus fa-solid"></i>
-                    <i @click.stop="active = 2, getString(active)" :class="active===2 ? 'grey' : 'lightgrey'"
+                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'grey' : 'lightgrey'"
                         class="fa-minus fa solid"></i>
-                    <i @click.stop="active = 3, getString(active)" :class="active===3 ? 'grey' : 'lightgrey'"
+                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'grey' : 'lightgrey'"
                         class="fa-minus fa-solid"></i>
-                    </div>
-                    <!-- /icon slider -->
+                </div>
+                <!-- /icon slider -->
 
-                    <!--  altra icona slider -->
+                <!--  altra icona slider -->
 
-                    <!-- <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
+                <!-- <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i> -->
 
-                    <!--  altra icona slider -->
+                <!--  altra icona slider -->
 
 
             </div>
@@ -227,15 +242,20 @@ export default {
             }
 
             .icon {
-               font-size: 50px;
+                font-size: 50px;
             }
-            .grey{
+
+            .grey {
                 color: $grey;
             }
-            .lightgrey{
+
+            .lightgrey {
                 color: lightgray;
             }
         }
+    }
+    button{
+        color: $black;
     }
 
 }
