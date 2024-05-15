@@ -21,15 +21,10 @@ export default {
 
 <style scoped lang="scss">
 section {
-    /* The image used */
     background-image: url(../assets/img/contact_and_footer/contact-1.jpg);
-
-    /* Set a specific height */
     min-height: 300px;
-
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: bottom 100px center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
 }
