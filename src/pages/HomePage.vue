@@ -9,7 +9,7 @@ import HomePageOnlineCourses from "../components/HomePageOnlineCourses.vue";
 import HomePageBestTutor from "../components/HomePageBestTutor.vue";
 import HomePagePricing  from "../components/HomePagePricing.vue"
 import HomePageLogoSlider from "../components/HomePageLogoSlider.vue";
-
+import { store } from "../store";
 
 
 export default {
@@ -27,7 +27,7 @@ export default {
     },
     data() {
         return {
-            
+            store,
         }
     },
 }
@@ -38,7 +38,7 @@ export default {
     <HomePageTutor />
     <HomePageTutorAtHome />
     <HomePageChildren />
-    <HomePageStudent />
+    <HomePageStudent :propCard="store.arrayPeople"/>
     <HomePageWhatWeDo />
     <HomePageOnlineCourses />
     <HomePageBestTutor />

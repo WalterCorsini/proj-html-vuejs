@@ -1,6 +1,10 @@
 <script>
 import AppCardStudent from "./AppCardStudent.vue";
+
 export default {
+    props: {
+        propCard: Object,
+    },
     components: {
         AppCardStudent,
     },
@@ -30,26 +34,6 @@ export default {
         }
     },
     methods: {
-        // changeActivePlus() {
-        //     //  inserire set interval per andare in avanti e stoppare il set che va indietro
-        //     //  se è gia attivo lo metto in pausa
-        //     console.log(this.active);
-        //     if (this.active <= 1) {
-        //         this.active++;
-        //     } else {
-        //         this.active = 0;
-        //     }
-        // },
-        // changeActiveLess() {
-        //     //  inserire set interval per andare indietro e stoppare il set che va in avanti
-        //     //  se è gia attivo lo metto in pausa
-        //     console.log(this.active);
-        //     if (this.active >= 1) {
-        //         this.active--;
-        //     } else {
-        //         this.active = 2;
-        //     }
-        // }
         changeActive(value) {
             if (value === "P") {
                 if (this.active <= 1) {
@@ -70,10 +54,8 @@ export default {
 </script>
 
 <template>
-
-    <!-- da usare il carosello -->
     <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
-        <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople"
+        <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in propCard"
             class="card d-flex justify-content-center align-items-center h-100 p-2">
             <AppCardStudent :propCard="curElem" />
             <div class="d-flex flex-row gap-3">
