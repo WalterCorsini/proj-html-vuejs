@@ -1,8 +1,10 @@
 <script>
 import AppButton from "../components/AppButton.vue";
+import AppCardHero from "../components/AppCardHero.vue"
 export default {
     components: {
         AppButton,
+        AppCardHero,
     },
     data() {
         return {
@@ -67,18 +69,7 @@ export default {
         <div class="carousel-inner">
             <div v-for="curElem, index in arrayImgSection1" class="carousel-item h-100 w-100"
                 :class="active === index ? 'active' : ''">
-                <img :src="getImage(curElem.img)" class="d-block w-100 h-100" alt="...">
-                <div class="hero-text
-            d-flex flex-column justify-content-center align-items-center
-            text-center w-100 h-100">
-                    <div class="small-container w-50">
-                        <h2><strong>{{ curElem.title }}</strong></h2>
-                        <span>{{ curElem.subTitle }}</span>
-                        <div class="btn">
-                            <AppButton title="REGISTER NOW" />
-                        </div>
-                    </div>
-                </div>
+                <AppCardHero :propCard="curElem" />
             </div>
         </div>
         <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"

@@ -1,5 +1,9 @@
 <script>
+import AppCardIcon from './AppCardIcon.vue';
 export default{
+    components:{
+        AppCardIcon,
+    },
     data(){
         return{
                 arrayIcon: [
@@ -43,10 +47,7 @@ export default{
     <div class="container w-100">
         <div class="row justify-content-evenly mt-5">
             <div v-for="curElem in arrayIcon" class="d-flex flex-column justife-content-center align-items-center col-2 p-3">
-                <div class="icon d-flex flex-column justify-content-center align-items-center p-4 w-100">
-                    <img :src="getImage(curElem.img)" alt="">
-                    <span class="m-3">{{ curElem.name }}</span>
-                </div>
+                <AppCardIcon :propCard="curElem" />
             </div>
         </div>
     </div>
