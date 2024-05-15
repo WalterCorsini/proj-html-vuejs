@@ -25,6 +25,9 @@ export default{
     </div>
 </template>
 
-<style>
-
+<style scoped>
+    img {
+        width: 100px;
+        border-radius: 50%;
+    }
 </style>
