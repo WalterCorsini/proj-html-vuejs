@@ -9,7 +9,7 @@ export default {
 
 <template>
     <div class="mb-1 d-flex justify-content-center align-items-center"
-     :style="{'background-color' : `${color}`}">
+        :style="{'background-color' : `${color}`}">
         <a class="fw-bold" @click.prevent href="">
             {{ title }}
         </a>

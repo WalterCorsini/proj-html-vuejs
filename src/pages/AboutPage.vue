@@ -1,7 +1,9 @@
 <script>
 import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
+import AboutPageQuotes from '../components/AboutPageQuotes.vue'
+
 export default {
-    components: { AboutPageTutorCard },
+    components: { AboutPageTutorCard, AboutPageQuotes },
     data() {
         return {
             tutorsArray: [
@@ -99,8 +101,8 @@ export default {
     <section class="tutors-section">
         <div class="container">
             <div class="tutors-title text-center">
-                <h2>Top tutors in every subjects</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, officiis atque adipisci ipsam nulla vero dolorem cupiditate.</p>
+                <h2 class="title-font primary-color">Top tutors in every subjects</h2>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, officiis atque adipisci ipsam nulla vero dolorem cupiditate.</p>
             </div>
             <div class="row">
                 <div class="col-4" v-for="tutor in tutorsArray">
@@ -109,6 +111,11 @@ export default {
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section>
+        <AboutPageQuotes />
     </section>
 
 </template>
@@ -150,7 +157,7 @@ export default {
             .data {
                 @include flex($justify-content: flex-start);
                 gap: 100px;
-                color: $primary-color;
+                
 
                 .num {
                     font-size: 3rem;
@@ -168,8 +175,16 @@ export default {
 }
 
 .tutors-section{
-    border: 1px solid gray;
+    border-top: 1px solid rgb(218, 218, 218);
     padding: 40px 0;
+
+    .tutors-title {
+        padding: 40px 0;
+    }
+
+    .desc {
+        color: grey;
+    }
 
 }
 

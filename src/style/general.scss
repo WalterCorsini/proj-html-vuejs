@@ -1,5 +1,7 @@
+@use "../style/partials/variables" as *;
 @import "bootstrap/scss/bootstrap";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 * {
     margin: 0;
@@ -28,4 +30,8 @@ li {
 .title-font {
     font-family: "Merriweather" , serif;
     font-weight: bold;
+}
+
+.primary-color {
+    color: $primary-color;
 }
