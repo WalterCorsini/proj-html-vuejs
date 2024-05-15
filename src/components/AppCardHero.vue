@@ -9,7 +9,6 @@ export default{
     },
     data(){
         return{
-
         }
     },
     methods:{
@@ -21,8 +20,7 @@ export default{
 </script>
 
 <template>
-        <div class="carousel-item h-100 w-100"
-                :class="active === index ? 'active' : ''">
+        <div class="carousel-item h-100 w-100 active">
                 <img :src="getImage(propCard.img)" class="d-block w-100 h-100" alt="...">
                 <div class="hero-text
             d-flex flex-column justify-content-center align-items-center

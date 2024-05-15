@@ -89,7 +89,6 @@ export default {
 <template>
     <div class="container mb-1">
         <div v-for="curElem, index in listArray" class="row">
-            <AppCardWhatWeDo :propCard="curElem" />
             <div @click.stop="active = index" class="col-3">
                 <span class="d-block">
                     {{ curElem.name }}
