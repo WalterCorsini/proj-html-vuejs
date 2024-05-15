@@ -1,10 +1,10 @@
 <script>
 import HomePageMiniButton from "./HomePageMiniButton.vue";
-import AppCard from "./AppCard.vue";
+import AppCardOnline from "./AppCardOnline.vue";
 export default {
     components: {
         HomePageMiniButton,
-        AppCard,
+        AppCardOnline,
     },
     data() {
         return {
@@ -111,9 +111,6 @@ export default {
         }
     },
     methods: {
-    //     getImage(elem) {
-    //         return new URL(`../assets/img/home-page/sezione-7/${elem}.jpg`, import.meta.url).href;
-    //     },
         getString(number) {
             if (number === 1) {
                 this.arrayActive = this.arrayCard1;
@@ -147,11 +144,11 @@ export default {
                 </p>
 
                 <!-- container card -->
-                <div class="container-card d-flex gap-3 mt-5 justify-content-around">
+                <div class="container-card d-flex gap-3 mt-5 justify-content-around ">
                     <!-- visualizza le 9 card ma non come nell'esempio usare  https://swiperjs.com/ -->
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
-                        <AppCard :propCard="curCard" />
+                        <AppCardOnline :propCard="curCard" />
                     </div>
 
                     <!-- button previous and next -->
@@ -256,6 +253,11 @@ export default {
             .lightblue {
                 color: lightblue;
             }
+        }
+        .container-absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
         }
     
     button{

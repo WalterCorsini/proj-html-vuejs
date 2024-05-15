@@ -48,10 +48,7 @@ export default {
     position: relative;
     max-width: 100%;
 
-    .container-absolute {
-        position: absolute;
-        top: 0;
-        left: 0;
+
 
         .container-online-courses {
             width: 70%;
@@ -114,7 +111,7 @@ export default {
             .lightgrey {
                 color: lightgray;
             }
-        }
+        
     }
 
     button {
