@@ -1,5 +1,8 @@
 <script>
 export default {
+    props: {
+        propTitle: Object,
+    },
     data() {
         return {
 
@@ -12,8 +15,8 @@ export default {
 <section>
     <div class="container">
         <div class="py-5">
-            <h2>Contact</h2>
-            <span><a href="#">Home</a> / contact</span>
+            <h2>{{ propTitle.title }}</h2>
+            <span><a href="#">{{ propTitle.home }}</a> / {{ propTitle.title }}</span>
         </div>
     </div>
 </section>

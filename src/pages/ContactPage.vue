@@ -1,19 +1,22 @@
 <script>
-import ContactJumbotron from "../components/ContactJumbotron.vue";
+import AppJumbotron from "../components/AppJumbotron.vue";
 import ContactOfficeAndForm from "../components/ContactOfficeAndForm.vue";
 import ContactMap from "../components/ContactMap.vue";
 import ContactSocialsAndNews from "../components/ContactSocialsAndNews.vue";
 
 export default{
     components: {
-        ContactJumbotron,
+        AppJumbotron,
         ContactOfficeAndForm,
         ContactMap,
         ContactSocialsAndNews
     },
     data(){
         return{
-            
+            jumbo: {
+                title: "Contact",
+                home: "Home"
+            }
         }
     }
 }
@@ -21,7 +24,7 @@ export default{
 
 <template>
 <main>
-    <ContactJumbotron />
+    <AppJumbotron :propTitle="jumbo" />
     <ContactOfficeAndForm />
     <ContactMap />
     <ContactSocialsAndNews />
