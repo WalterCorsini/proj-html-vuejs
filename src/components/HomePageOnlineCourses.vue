@@ -17,7 +17,9 @@ export default {
                     name: "Kathryn Webb",
                     text: "tante parole dette a caso senza senzo servono solo per riempire la card",
                     color: "green",
-                    price: "12$"
+                    price: "12$",
+                    role: "Business",
+                    user: 6,
                 },
                 {
                     img: "2",
@@ -25,7 +27,9 @@ export default {
                     name: "Jennie King",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "gold",
-                    price: "25$"
+                    price: "25$",
+                    role: "Language",
+                    user: 10,
                 },
                 {
                     img: "3",
@@ -33,7 +37,9 @@ export default {
                     name: "Davide Sanders",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "red",
-                    price: "34$"
+                    price: "34$",
+                    role: "Programming",
+                    user: 2,
                 },
             ],
             arrayCard2: [
@@ -43,7 +49,9 @@ export default {
                     name: "David Sanders",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "red",
-                    price: "35$"
+                    price: "35$",
+                    role: "language",
+                    user: 5,
                 },
                 {
                     img: "5",
@@ -51,7 +59,9 @@ export default {
                     name: "Jennifer Powell",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "gold",
-                    price: "22$"
+                    price: "22$",
+                    role: "Business",
+                    user: 4,
                 },
                 {
                     img: "6",
@@ -59,7 +69,9 @@ export default {
                     name: "Edward Bowman",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "green",
-                    price: "15$"
+                    price: "15$",
+                    role: "Programming",
+                    user: 8,
                 },
             ],
             arrayCard3: [
@@ -69,7 +81,9 @@ export default {
                     name: "Edward Bowman",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "green",
-                    price: "10$"
+                    price: "10$",
+                    role: "Business",
+                    user: 20,
                 },
                 {
                     img: "8",
@@ -77,7 +91,9 @@ export default {
                     name: "Dave Robbins",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "red",
-                    price: "50$"
+                    price: "50$",
+                    role: "Business",
+                    user: 9,
                 },
                 {
                     img: "9",
@@ -85,7 +101,9 @@ export default {
                     name: "Preston Marshall",
                     text: "Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit",
                     color: "green",
-                    price: "19$"
+                    price: "19$",
+                    role: "Business",
+                    user: 15,
                 },
             ],
 
@@ -134,25 +152,6 @@ export default {
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
                         <AppCard :propCard="curCard" />
-                        <!-- <div class="align-left">
-                            <img :src="getImage(curCard.img)" alt="">
-                            <div class="card-text ms-1">
-                                <span class="title-card fw-bold"> {{ curCard.title }}</span>
-                                <span class="text-card"> {{ curCard.name }}</span>
-                                <span class="text-card"> {{ curCard.text }}</span>
-                                <div class="bnt-price">
-                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12"
-                                        color="rgb(64, 196, 255)" />
-                                    <HomePageMiniButton v-if="index === 1" title="$ 24" color="rgb(255, 215, 64)" />
-                                </div>
-                            </div>
-                        </div>
-                        <span class="ms-2">
-                            <i class="fa-solid fa-user"></i>
-                            0
-                            <i class="fa-solid fa-tag"></i>
-                            programming
-                        </span> -->
                     </div>
 
                     <!-- button previous and next -->
@@ -173,26 +172,14 @@ export default {
 
                 <!-- icon slider -->
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'grey' : 'lightgrey'"
-                        class="fa-minus fa-solid"></i>
-                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'grey' : 'lightgrey'"
-                        class="fa-minus fa solid"></i>
-                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'grey' : 'lightgrey'"
-                        class="fa-minus fa-solid"></i>
+                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'blue' : 'lightblue'"
+                        class="fa-circle fa-solid"></i>
+                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'blue' : 'lightblue'"
+                        class="fa-circle fa solid"></i>
+                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'blue' : 'lightblue'"
+                        class="fa-circle fa-solid"></i>
                 </div>
                 <!-- /icon slider -->
-
-                <!--  altra icona slider -->
-
-                <!-- <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
-                        class="fa-circle"></i>
-                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'"
-                        class="fa-circle"></i>
-                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'"
-                        class="fa-circle"></i> -->
-
-                <!--  altra icona slider -->
-
 
             </div>
         </div>
@@ -259,15 +246,15 @@ export default {
             }
 
             .icon {
-                font-size: 50px;
+                font-size: 20px;
             }
 
-            .grey {
-                color: $grey;
+            .blue {
+                color: $primary-color;
             }
 
-            .lightgrey {
-                color: lightgray;
+            .lightblue {
+                color: lightblue;
             }
         }
     

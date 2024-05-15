@@ -34,11 +34,11 @@ export default {
                 </div>
             </div>
         </div>
-        <span class="ms-2">
-            <i class="fa-solid fa-user"></i>
-            0
-            <i class="fa-solid fa-tag"></i>
-            programming
+        <span class="text-uppercase">
+            <i class="fa-solid fa-user ms-2 me-1"></i>
+            {{ propCard.user }}
+            <i class="fa-solid fa-tag ms-2"></i>
+            {{ propCard.role }}
         </span>
     </div>
 </template>
@@ -80,7 +80,7 @@ export default {
                         div {
                             position: absolute;
                             top: 0;
-                            right: 0;
+                            right: 2%;
                         }
                     }
 
