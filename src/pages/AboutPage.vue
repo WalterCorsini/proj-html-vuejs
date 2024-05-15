@@ -3,12 +3,17 @@ import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
 import AboutPageQuotes from '../components/AboutPageQuotes.vue'
 import AboutPageFaq from '../components/AboutPageFaq.vue'
 import AppJumbotron from '../components/AppJumbotron.vue'
+import HomePageStudent from '../components/HomePageStudent.vue'
+import { store } from '../store'
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron },
+    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent },
     data() {
         return {
+
+            store,
+
             tutorsArray: [
                 {
                     name: "Edward Bowman",
@@ -121,7 +126,7 @@ export default {
     <!-- Quotes Section -->
     <section>
         <!-- <AboutPageQuotes /> -->
-        <HomePageStudent />
+        <HomePageStudent :propCard="store.aboutPageQuotesArray"/>
     </section>
 
     <!-- Faq section -->
