@@ -3,7 +3,7 @@ import AppCardStudent from './AppCardStudent.vue';
 
 export default {
     components: {
-            AppCardStudent
+        AppCardStudent
     },
 
     props: {
@@ -14,24 +14,7 @@ export default {
         return {
             active: 0,
             arrayPeople: [
-                {
-                    img: "-1",
-                    name: "Jonathan Gibsone",
-                    role: "Teaching Assistant",
-                    text: "Un elefante si dondolava sopra un filo di una ragnatela",
-                },
-                {
-                    img: "-2",
-                    name: "Brooke Austin",
-                    role: "Teaching Assistant",
-                    text: "e ritenendo la cosa interessante",
-                },
-                {
-                    img: "-3",
-                    name: "Rachel Collins",
-                    role: "Student",
-                    text: "andarono a chiamare un altro elefante"
-                },
+
             ],
         }
     },
