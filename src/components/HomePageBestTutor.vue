@@ -28,11 +28,6 @@ export default {
             ]
         }
     },
-    methods:{
-        getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-8/${elem}.jpg`, import.meta.url).href;
-        }, 
-    }
 }
 </script>
 

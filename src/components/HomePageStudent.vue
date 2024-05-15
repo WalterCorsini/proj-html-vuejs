@@ -1,7 +1,7 @@
 <script>
-import AppCardStudent from "./AppCardStudent.vue"; 
+import AppCardStudent from "./AppCardStudent.vue";
 export default {
-    components:{
+    components: {
         AppCardStudent,
     },
     data() {
@@ -30,29 +30,41 @@ export default {
         }
     },
     methods: {
-        getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-5/${elem}.png`, import.meta.url).href;
-        },
-        changeActivePlus() {
-            //  inserire set interval per andare in avanti e stoppare il set che va indietro
-            //  se è gia attivo lo metto in pausa
-            console.log(this.active);
-            if (this.active <= 1) {
-                this.active++;
+        // changeActivePlus() {
+        //     //  inserire set interval per andare in avanti e stoppare il set che va indietro
+        //     //  se è gia attivo lo metto in pausa
+        //     console.log(this.active);
+        //     if (this.active <= 1) {
+        //         this.active++;
+        //     } else {
+        //         this.active = 0;
+        //     }
+        // },
+        // changeActiveLess() {
+        //     //  inserire set interval per andare indietro e stoppare il set che va in avanti
+        //     //  se è gia attivo lo metto in pausa
+        //     console.log(this.active);
+        //     if (this.active >= 1) {
+        //         this.active--;
+        //     } else {
+        //         this.active = 2;
+        //     }
+        // }
+        changeActive(value) {
+            if (value === "P") {
+                if (this.active <= 1) {
+                    this.active++;
+                } else {
+                    this.active = 0;
+                }
             } else {
-                this.active = 0;
+                if (this.active >= 1) {
+                    this.active--;
+                } else {
+                    this.active = 2;
+                }
             }
         },
-        changeActiveLess() {
-            //  inserire set interval per andare indietro e stoppare il set che va in avanti
-            //  se è gia attivo lo metto in pausa
-            console.log(this.active);
-            if (this.active >= 1) {
-                this.active--;
-            } else {
-                this.active = 2;
-            }
-        }
     }
 }
 </script>
@@ -62,26 +74,27 @@ export default {
     <!-- da usare il carosello -->
     <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
         <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople"
-        class="card d-flex justify-content-center align-items-center h-100 p-2">
+            class="card d-flex justify-content-center align-items-center h-100 p-2">
             <AppCardStudent :propCard="curElem" />
             <div class="d-flex flex-row gap-3">
-            <i @click.stop="active=index" :class="active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle" v-for="curElem,index in arrayPeople"></i>
+                <i @click.stop="active = index" :class="active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle"
+                    v-for="curElem, index in arrayPeople"></i>
             </div>
-            
+
 
         </div>
-        <button @click.prevent.stop="changeActiveLess" class="carousel-control-prev" type="button"
+        <button @click.prevent.stop="changeActive('L')" class="carousel-control-prev" type="button"
             data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button @click.prevent.stop="changeActivePlus" class="carousel-control-next" type="button"
+        <button @click.prevent.stop="changeActive('P')" class="carousel-control-next" type="button"
             data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    
+
 </template>
 
 <style scoped lang="scss">

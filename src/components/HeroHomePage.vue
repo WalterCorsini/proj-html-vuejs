@@ -35,10 +35,6 @@ export default {
         this.changeActive("P");
     },
     methods: {
-        // to take dynamic image
-        getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-1/${elem}.jpg`, import.meta.url).href;
-        },
         // change active elem next
         changeActive(value) {
             clearInterval(this.stopInterval);

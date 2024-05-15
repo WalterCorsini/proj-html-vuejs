@@ -34,11 +34,6 @@ export default{
                 ]
         }
     },
-    methods:{
-        getImage(elem) {
-            return new URL(`../assets/img/home-page/sezione-2/${elem}.png`, import.meta.url).href;
-        },
-    }
 }
 </script>
 

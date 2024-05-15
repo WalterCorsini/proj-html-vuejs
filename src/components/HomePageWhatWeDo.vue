@@ -89,6 +89,7 @@ export default {
 <template>
     <div class="container mb-1">
         <div v-for="curElem, index in listArray" class="row">
+            <AppCardWhatWeDo :propCard="curElem" />
             <div @click.stop="active = index" class="col-3">
                 <span class="d-block">
                     {{ curElem.name }}
@@ -138,31 +139,35 @@ export default {
             border-left: 8px solid $primary_color;
         }
     }
-
-
+    
+    
     .info {
         position: absolute;
         top: 0;
         right: 0;
-
+        
         span {
             display: block;
             margin: 10px;
-
+            
             i {
                 color: $primary-color;
             }
         }
-
+        
         .list {
             height: 60%;
             position: relative;
-
+            
             img {
                 width: 80px;
             }
         }
-
+        
     }
+}
+.isActive{
+    color: $primary_color !important;
+    border-left: 8px solid $primary_color !important;
 }
 </style>
