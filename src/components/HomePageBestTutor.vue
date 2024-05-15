@@ -1,5 +1,9 @@
 <script>
+import AppCardBestTutor from './AppCardBestTutor.vue';
 export default {
+    components:{
+        AppCardBestTutor,
+    },
     data() {
         return {
             arrayTutors:[
@@ -33,23 +37,15 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid">
-        <div class="container w-50 text-center">
+    <div class="container-fluid text-center">
+        <div class="container w-50">
             <h1>The Best Tutors in Town</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam odio vero, fuga rem temporibus
                 excepturi debitis voluptate nostrum natus neque saepe perferendis</p>
         </div>
-            <div class="card-tutor d-flex justify-content-center text-center gap-3">
-                <div v-for="curElem in arrayTutors" class="card-container d-flex flex-column justify-content-center align-items-center gap-2">
-                    <img :src="getImage(curElem.img)" alt="">
-                    <span class="name">{{ curElem.name }}</span>
-                    <span class="fw-bold">{{ curElem.role }}</span>
-                    <span>{{ curElem.text }}</span>
-                    <span class="d-flex gap-3">
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </span>
+            <div class="card-tutor d-flex justify-content-center gap-3">
+                <div v-for="curElem in arrayTutors" class="card-container">
+                    <AppCardBestTutor :propCard="curElem" />
                 </div>
 
             </div>
@@ -60,7 +56,7 @@ export default {
 @use "../style/partials/variables" as *;
 
 .container-fluid{
-    padding:100px;
+    padding:50px;
 }
 .card-tutor{
     margin-top: 50px;
