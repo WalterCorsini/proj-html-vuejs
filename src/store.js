@@ -23,19 +23,19 @@ export const store = reactive ({
     ],
     aboutPageQuotesArray: [
         {
-            img: "../assets/about-page/quotes-img/quoteimg-1.jpg",
+            img: "../assets/img/about-page/quotes-img/quoteimg-1.jpg",
             name: "Jonathan Gibsone",
             role: "Teaching Assistant",
             text: "Un elefante si dondolava sopra un filo di una ragnatela",
         },
         {
-            img: "../assets/about-page/quotes-img/quoteimg-2.jpg",
+            img: "../assets/img/about-page/quotes-img/quoteimg-2.jpg",
             name: "Brooke Austin",
             role: "Teaching Assistant",
             text: "e ritenendo la cosa interessante",
         },
         {
-            img: "../assets/about-page/quotes-img/quoteimg-3.jpg",
+            img: "../assets/img/about-page/quotes-img/quoteimg-3.jpg",
             name: "Rachel Collins",
             role: "Student",
             text: "andarono a chiamare un altro elefante"
