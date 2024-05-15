@@ -3,7 +3,7 @@ export default {
     data() {
         return {
         }
-    }
+    },
 }
 </script>
 
@@ -23,7 +23,7 @@ export default {
                     suscipit modi repellendus, culpa fugit ipsam officiis ducimus accusantium dolorem quos pariatur sed,
                     ipsa tenetur illum.
                 </span>
-                <div class="d-flex justify-content-around">
+                <div class="pb-3 d-flex justify-content-around">
                     <div class="count">
                         <div class="mt-5 d-flex flex-column">
                             <a href="">168</a>
@@ -32,8 +32,10 @@ export default {
                     </div>
                     <div class="count">
                         <div class="mt-5 d-flex flex-column">
-                            <a href="">347</a>
-                            <span>Eventi</span>
+                            <div>
+                                <a href="">347</a>
+                            </div>
+                                <span>Eventi</span>
                         </div>
                     </div>
                 </div>
@@ -46,7 +48,7 @@ export default {
 @use "../style/partials/variables" as *;
 
 .container {
-    border-top: 1px solid $grey;
+    border-top: 1px solid $lightgrey;
 
     span {
         font-size: 10px;

@@ -2,7 +2,6 @@
 export default{
     data(){
         return{
-            Swiper,
             arrayLogo:[
                 "1",
                 "2",
