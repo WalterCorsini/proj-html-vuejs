@@ -60,7 +60,7 @@ export default{
             .hero-text {
                 position: relative;
                 z-index: 1;
-                color: white;
+                color: $white;
 
                 .small-container {
                     .span {
