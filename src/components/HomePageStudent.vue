@@ -56,8 +56,8 @@ export default {
 <template>
 
     <!-- da usare il carosello -->
-    <div class="container-fluid w-100 d-flex flex-column justify-content-center align-items-center text-center">
-        <img class="background w-100 h-100" src="../assets/img/home-page/globo.png" alt="">
+    <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
+        <!-- <img class="background w-100 h-100" src="../assets/img/home-page/globo.png" alt=""> -->
         <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople"
         class="card d-flex justify-content-center align-items-center h-100 p-2">
 
@@ -91,15 +91,20 @@ export default {
 @use "../style/partials/variables" as *;
 
 .container-fluid {
-    position: relative;
-    height: 50vh;
     margin-bottom: 100px;
+    background-image: url(../assets/img/home-page/globo.png);
+    min-height: 70vh;
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    .background {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+
+    // .background {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
 
     .card {
         color: $white;
