@@ -62,9 +62,9 @@ export default {
         class="card d-flex justify-content-center align-items-center h-100 p-2">
 
             <img :src="getImage(curElem.img)" alt="">
-            <p>{{ curElem.text }}</p>
-            <p>{{ curElem.name }}</p>
-            <p>{{ curElem.role }}</p>
+            <span class="m-2">{{ curElem.text }}</span>
+            <span class="m-2 fw-bold fs-5">{{ curElem.name }}</span>
+            <span class="mb-4">{{ curElem.role }}</span>
             <div class="d-flex gap-3">
             <i @click.stop="active=0" :class="active === 0 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
             <i @click.stop="active=1" :class="active === 1 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>

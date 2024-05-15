@@ -94,7 +94,10 @@ export default {
 
 <template>
     <div class="container-fluid">
+        <!-- background -->
         <img class="w-100" src="../assets/img/home-page/sfondo-rombi.png" alt="sfondo-sezione">
+
+        <!-- section container -->
         <div class="container-absolute w-100">
             <div class="container-online-courses pt-5 m-auto
             d-flex flex-column justify-content-center align-items-center">
@@ -104,8 +107,10 @@ export default {
                     Incidunt praesentium, quibusdam id voluptate ipsam corporis sequi voluptatem explicabo magni culpa
                     in quisquam. Aperiam, ipsa.
                 </p>
+
+                <!-- container card -->
                 <div class="container-card d-flex gap-3 mt-5 justify-content-around">
-                    <!--  non visualizza tutte e 9 le card. -->
+                    <!-- visualizza le 9 card ma non come nell'esempio usare  https://swiperjs.com/ -->
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
                         <div class="align-left">
@@ -115,7 +120,8 @@ export default {
                                 <span class="text-card"> {{ curCard.name }}</span>
                                 <span class="text-card"> {{ curCard.text }}</span>
                                 <div class="bnt-price">
-                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12" color="rgb(64, 196, 255)" />
+                                    <HomePageMiniButton v-if="index === 0 || index === 2" title="$ 12"
+                                        color="rgb(64, 196, 255)" />
                                     <HomePageMiniButton v-if="index === 1" title="$ 24" color="rgb(255, 215, 64)" />
                                 </div>
                             </div>
@@ -127,17 +133,49 @@ export default {
                             programming
                         </span>
                     </div>
+
+                    <!-- button previous and next -->
+                    <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button @click.prevent.stop="changeActive(P)" class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <!-- button previous and next -->
+
                 </div>
+                <!-- container card -->
+
+                <!-- icon slider -->
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
+                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa-solid"></i>
+                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa solid"></i>
+                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'grey' : 'lightgrey'"
+                        class="fa-minus fa-solid"></i>
+                </div>
+                <!-- /icon slider -->
+
+                <!--  altra icona slider -->
+
+                <!-- <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'fa-solid' : 'fa-regular'"
                         class="fa-circle"></i>
                     <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'fa-solid' : 'fa-regular'"
-                        class="fa-circle"></i>
-                </div>
+                        class="fa-circle"></i> -->
+
+                <!--  altra icona slider -->
+
+
             </div>
         </div>
+        <!-- /section container -->
     </div>
 </template>
 
@@ -204,9 +242,20 @@ export default {
             }
 
             .icon {
+                font-size: 50px;
+            }
+
+            .grey {
                 color: $grey;
             }
+
+            .lightgrey {
+                color: lightgray;
+            }
         }
+    }
+    button{
+        color: $black;
     }
 
 }
