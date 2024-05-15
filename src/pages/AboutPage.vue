@@ -87,7 +87,7 @@ export default {
                 <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi doloremque inventore
                     eius dolorem, sapiente, dicta atque nulla harum magni ipsa dolor vero unde esse in error eos nam
                     odio minima?</p>
-                <div class="data title-font">
+                <div class="data title-font primary-color">
                     <div class="user-stories">
                         <p class="num">168</p>
                         <p>User Stories</p>
