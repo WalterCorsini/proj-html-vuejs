@@ -1,5 +1,9 @@
 <script>
+import AppCardStudent from "./AppCardStudent.vue"; 
 export default {
+    components:{
+        AppCardStudent,
+    },
     data() {
         return {
             active: 0,
@@ -57,18 +61,11 @@ export default {
 
     <!-- da usare il carosello -->
     <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
-        <!-- <img class="background w-100 h-100" src="../assets/img/home-page/globo.png" alt=""> -->
         <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in arrayPeople"
         class="card d-flex justify-content-center align-items-center h-100 p-2">
-
-            <img :src="getImage(curElem.img)" alt="">
-            <span class="m-2">{{ curElem.text }}</span>
-            <span class="m-2 fw-bold fs-5">{{ curElem.name }}</span>
-            <span class="mb-4">{{ curElem.role }}</span>
-            <div class="d-flex gap-3">
-            <i @click.stop="active=0" :class="active === 0 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
-            <i @click.stop="active=1" :class="active === 1 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
-            <i @click.stop="active=2" :class="active === 2 ? 'fa-solid' : 'fa-regular'" class="fa-circle"></i>
+            <AppCardStudent :propCard="curElem" />
+            <div class="d-flex flex-row gap-3">
+            <i @click.stop="active=index" :class="active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle" v-for="curElem,index in arrayPeople"></i>
             </div>
             
 
@@ -98,13 +95,6 @@ export default {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-
-
-    // .background {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    // }
 
     .card {
         color: $white;
