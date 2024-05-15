@@ -26,9 +26,6 @@ div {
     text-align: center;
     transition: 1s;
 
-    &:hover {
-    }
-
     a {
         text-decoration: none;
         font-family: sans-serif;
