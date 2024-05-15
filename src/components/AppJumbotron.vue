@@ -5,21 +5,31 @@ export default {
     },
     data() {
         return {
-
+            menu: [
+                {
+                    title: "Home",
+                    routeName: "home"
+                }
+            ]
         }
     }
 }
 </script>
 
 <template>
-<section>
-    <div class="container">
-        <div class="py-5">
-            <h2>{{ propTitle.title }}</h2>
-            <span><a href="#">{{ propTitle.home }}</a> / {{ propTitle.title }}</span>
+    <section>
+        <div class="container">
+            <div class="py-5">
+                <h2 class="title-font">{{ propTitle.title }}</h2>
+                <div>
+                    <router-link :to="{ name: item.routeName }" v-for="item in menu" class="nav-link">
+                        {{item.title}}
+                    </router-link>
+                    / {{ propTitle.title }}
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 </template>
 
 <style scoped lang="scss">
@@ -30,10 +40,12 @@ section {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 
-a {
+.nav-link {
     text-decoration: none;
-    color: inherit;
+    display: inline;
 }
+
 </style>

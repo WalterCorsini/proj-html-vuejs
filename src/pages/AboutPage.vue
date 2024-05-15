@@ -2,10 +2,11 @@
 import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
 import AboutPageQuotes from '../components/AboutPageQuotes.vue'
 import AboutPageFaq from '../components/AboutPageFaq.vue'
+import AppJumbotron from '../components/AppJumbotron.vue'
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq },
+    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron },
     data() {
         return {
             tutorsArray: [
@@ -54,20 +55,22 @@ export default {
                     role: "Professor",
                     img: "-9"
                 }
-            ]
+            ],
+            pageJumbotron: {
+                home: "Home",
+                title: "About"
+            }
         }
+
     }
 }
 </script>
 
 <template>
 
-
-    <section class="section-title">
-        <div class="title container">
-            <h1 class="title-font">About</h1>
-            <span>Home / About</span>
-        </div>
+    <!-- Jumbotron -->
+    <section>
+        <AppJumbotron :propTitle="pageJumbotron"/>
     </section>
 
     <section class="children-section">
@@ -117,7 +120,8 @@ export default {
 
     <!-- Quotes Section -->
     <section>
-        <AboutPageQuotes />
+        <!-- <AboutPageQuotes /> -->
+        <HomePageStudent />
     </section>
 
     <!-- Faq section -->
@@ -132,15 +136,6 @@ export default {
 @use "../style/partials/variables" as *;
 
 
-.section-title {
-    background-image: url("../assets/img/about-page/pages-title-parallax.jpg");
-    background-position: center;
-
-    .title {
-        padding: 80px 0;
-        color: white;
-    }
-}
 
 .children-section {
     padding: 100px 0;

@@ -1,5 +1,15 @@
 <script>
+import AppCardStudent from './AppCardStudent.vue';
+
 export default {
+    components: {
+            AppCardStudent
+    },
+
+    props: {
+        propCard: Object,
+    },
+
     data() {
         return {
             active: 0,
