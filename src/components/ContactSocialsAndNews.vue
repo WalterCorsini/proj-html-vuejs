@@ -57,8 +57,6 @@ input:focus {
         color: #40c4ff;
 }
 
-
-
 a {
     text-decoration: none;
     color: inherit;

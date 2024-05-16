@@ -6,10 +6,12 @@ import AppJumbotron from '../components/AppJumbotron.vue'
 import HomePageStudent from '../components/HomePageStudent.vue'
 import { store } from '../store'
 import AppCount from '../components/AppCount.vue'
+import AppTopButton from '../components/AppTopButton.vue'
+import SideButtons from '../components/SideButtons.vue'
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount },
+    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount, AppTopButton, SideButtons },
     data() {
         return {
 
@@ -140,6 +142,8 @@ export default {
         <AboutPageFaq />
     </section>
 
+    <AppTopButton />
+    <SideButtons />
 </template>
 
 <style scoped lang="scss">

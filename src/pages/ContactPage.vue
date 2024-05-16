@@ -4,6 +4,7 @@ import ContactOfficeAndForm from "../components/ContactOfficeAndForm.vue";
 import ContactMap from "../components/ContactMap.vue";
 import ContactSocialsAndNews from "../components/ContactSocialsAndNews.vue";
 import AppTopButton from "../components/AppTopButton.vue";
+import SideButtons from "../components/SideButtons.vue";
 
 export default{
     components: {
@@ -11,7 +12,8 @@ export default{
         ContactOfficeAndForm,
         ContactMap,
         ContactSocialsAndNews,
-        AppTopButton
+        AppTopButton,
+        SideButtons,
     },
     data(){
         return{
@@ -31,6 +33,7 @@ export default{
     <ContactMap />
     <ContactSocialsAndNews />
     <AppTopButton />
+    <SideButtons />
 </main>
 </template>
 
