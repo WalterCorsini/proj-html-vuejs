@@ -2,74 +2,29 @@
 export default {
     data() {
         return {
-            contatore: 0,
-            contatore1: 0,
-            // Array per memorizzare i valori intermedi
-            stepsUser: [],
-            steps:[],
+            contatoreUser: 0,
+            contatoreEvent: 0,
+            user:168,
+            event:348,
         };
     },
     created() {
-        this.generateSteps();
-        this.incrementCounter();
-        this.generateStepsUser();
-        this.incrementCounterUser();
+        this.generateCountUser();
+        this.generateCountEvents();
     },
     methods: {
-        // generatore per indice storie utenti
-        generateStepsUser() {
-            let currentUser = 0;    // contatore
-            const maxUser = 168;    // numero massimo
-            const stepUser = 7;     // quanti numeri alla volta incrementa  (cercare un multiplo perche funzioni)
-
-        // riempe un array con gli intervalli (7,14,21....)
-            while (currentUser <= maxUser) {
-                this.stepsUser.push(currentUser);
-                currentUser += stepUser;
+        generateCountUser(){
+            if(this.contatoreUser<=this.user-7){
+                this.contatoreUser+=7;
+                let nextCall=setTimeout(this.generateCountUser,100);
             }
         },
-        incrementCounterUser() {
-            if (this.stepsUser.length > 0) {
-                const nextStepUser = this.stepsUser.shift(); // Rimuove il primo elemento dell'array
-                setTimeout(() => {
-                    let currentUser = nextStepUser;
-                    console.log(`Contatore: ${nextStepUser}`);
-                    this.contatore = nextStepUser;
-                    // Se ci sono ancora intervalli incrementa il contatore
-                    if (this.stepsUser.length > 0) {
-                        this.incrementCounterUser();
-                    }
-                }, 100); // tempo set timeout
+        generateCountEvents(){
+            if(this.contatoreEvent<=this.event-12){
+                this.contatoreEvent+=12;
+                let nextCall=setTimeout(this.generateCountEvents,100);
             }
-        },
-
-        //  generatore per indice eventi
-        generateSteps() {
-            let current = 0;    //contatore
-            const max = 348;    // numero massimo
-            const step = 12;    // quanti numeri alla volta incrementa (cercare un multiplo perche funzioni)
-
-        //  riempe un array con gli intervalli di 12 in 12 (12,24,36....)
-            while (current <= max) {
-                this.steps.push(current);
-                current += step;
-            }
-        },
-        incrementCounter() {
-            if (this.steps.length > 0) {
-                const nextStep = this.steps.shift(); // Rimuove il primo elemento dell'array
-                setTimeout(() => {
-                    this.contatore1 = nextStep;
-                    console.log(`Contatore: ${nextStep}`);
-                    // Se ci sono ancora intervalli incrementa il contatore
-                    if (this.steps.length > 0) {
-                        this.incrementCounter();
-                    } else {
-                        console.log("ciao");
-                    }
-                }, 100); // tempo set timeout
-            }
-        },
+        }
     },
 }
 </script>
@@ -93,14 +48,14 @@ export default {
                 <div class="pb-3 d-flex justify-content-around">
                     <div class="count">
                         <div class="mt-5 d-flex flex-column">
-                            <a href="">{{ contatore }}</a>
+                            <a href="">{{ contatoreUser }}</a>
                             <span>Storie degli utenti</span>
                         </div>
                     </div>
                     <div class="count">
                         <div class="mt-5 d-flex flex-column">
                             <div>
-                                <a href="">{{ contatore1 }}</a>
+                                <a href="">{{ contatoreEvent }}</a>
                             </div>
                                 <span>Eventi</span>
                         </div>
