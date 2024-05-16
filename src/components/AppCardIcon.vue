@@ -2,6 +2,7 @@
 export default {
     props: {
         propCard: Object,
+        color: String,
     },
     data() {
         return {
@@ -18,7 +19,7 @@ export default {
 
 <template>
     <div class="d-flex flex-column justify-content-center align-items-center p-4 w-100"
-    :style="{'background-color' : `${propCard.color}`}">
+    :style="{'background-color' : `${color}`}">
         <img :src="getImage(propCard.img)" alt="">
         <span class="m-3">{{ propCard.name }}</span>
     </div>

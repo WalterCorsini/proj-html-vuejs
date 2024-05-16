@@ -1,43 +1,38 @@
 <script>
 import AppCardIcon from './AppCardIcon.vue';
-export default{
-    components:{
+export default {
+    components: {
         AppCardIcon,
     },
-    data(){
-        return{
-                arrayIcon: [
-                    {
-                        name:"Languages",
-                        img: "_1",
-                        color:"rgb(245, 245, 245)",
-                    },
-                    {
-                        name:"Software",
-                        img: "_2",
-                        color:"rgb(245, 245, 245)",
-                    },
-                    {
-                        name:"Business",
-                        img: "_3",
-                        color:"rgb(245, 245, 245)",
-                    },
-                    {
-                        name:"Chemistry",
-                        img: "_4",
-                        color:"rgb(245, 245, 245)",
-                    },
-                    {
-                        name:"Science",
-                        img: "_5",
-                        color:"rgb(245, 245, 245)",
-                    },
-                    {
-                        name:"DIY&Craft",
-                        img: "_6",
-                        color:"rgb(245, 245, 245)",
-                    },
-                ]
+    data() {
+        return {
+            color: "#f3f3f3",
+            arrayIcon: [
+                {
+                    name: "Languages",
+                    img: "_1",
+                },
+                {
+                    name: "Software",
+                    img: "_2",
+                },
+                {
+                    name: "Business",
+                    img: "_3",
+                },
+                {
+                    name: "Chemistry",
+                    img: "_4",
+                },
+                {
+                    name: "Science",
+                    img: "_5",
+                },
+                {
+                    name: "DIY&Craft",
+                    img: "_6",
+                },
+            ]
         }
     },
 }
@@ -47,16 +42,17 @@ export default{
     <!-- section icon -->
     <div class="container w-100">
         <div class="row justify-content-evenly mt-5">
-            <div v-for="curElem in arrayIcon" class="d-flex flex-column justife-content-center align-items-center col-2 p-3">
-                <AppCardIcon :propCard="curElem" />
+            <div v-for="curElem in arrayIcon"
+                class="d-flex flex-column justife-content-center align-items-center col-2 p-3">
+                <AppCardIcon :propCard="curElem" :color="color" />
             </div>
         </div>
     </div>
     <!-- /section icon -->
-    
+
 
     <Transition name="fade">
-  </Transition>
+    </Transition>
 
 </template>
 
@@ -65,11 +61,11 @@ export default{
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 </style>
