@@ -5,7 +5,7 @@ export default {
             show: false,
         }
     },
-    mounted() {
+    created() {
         window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
@@ -34,7 +34,7 @@ export default {
 .ms_aspect {
     background-color: #40c4ff;
     font-weight: 700;
-    width: 50px;
+    width: 55px;
     aspect-ratio: 1;
     cursor: pointer;
     z-index: 99;
