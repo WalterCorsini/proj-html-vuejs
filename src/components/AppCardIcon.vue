@@ -8,7 +8,7 @@ export default {
 
         }
     },
-    methods:{
+    methods: {
         getImage(elem) {
             return new URL(`../assets/img/home-page/sezione-2/${elem}.png`, import.meta.url).href;
         },
@@ -23,4 +23,18 @@ export default {
     </div>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
+img {
+    transition: 1s;
+
+    &:hover {
+        transform: translateY(-5px);
+        transition: 1s;
+    }
+}
+.icon{
+                background-color:$lightgrey;    
+}
+</style>

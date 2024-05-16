@@ -66,18 +66,4 @@ export default{
 .fade-leave-to {
   opacity: 0;
 }
-    .container{
-        .col-2{
-            img{
-                transition: 1s;
-                &:hover{
-                    transform:translateY(-5px);
-                    transition: 1s;
-                }
-            }
-            .icon{
-                background-color:$lightgrey;    
-            }
-        }
-    }
 </style>
