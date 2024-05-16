@@ -21,7 +21,7 @@ export default {
             </div>
 
             <div class="col-4">
-                <h2>
+                <h2 class="title-font">
                     dare ai bambini la possibilità di raggiungere il loro potenziale.
                 </h2>
                 <span>
@@ -29,10 +29,14 @@ export default {
                     suscipit modi repellendus, culpa fugit ipsam officiis ducimus accusantium dolorem quos pariatur sed,
                     ipsa tenetur illum.
                 </span>
+
+                <!-- component AppCount -->
                 <div class="pb-3 d-flex justify-content-around">
                     <AppCount :count="store.usersCount" text="Storie degli utenti" color="rgb(64, 196, 255)"/>
                     <AppCount :count="store.eventsCount" text="Eventi" color="rgb(64, 196, 255)"/>
                 </div>
+                <!-- /component AppCount -->
+
             </div>
         </div>
     </div>
@@ -66,7 +70,5 @@ export default {
             color: $primary-color;
         }
     }
-
-
 }
 </style>

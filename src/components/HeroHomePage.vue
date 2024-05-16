@@ -10,7 +10,6 @@ export default {
     data() {
         return {
             store,
-            active:0,
             stopInterval:"",
             // array photo and text
             arrayImgSection1: [
@@ -33,55 +32,39 @@ export default {
         }
     },
     created() {
-        this.store.changeActive("P",this.active);
+        this.store.changeActive("P");
     },
-    // methods: {
-    //     // change active elem next
-    //     changeActive(value) {
-    //         clearInterval(this.stopInterval);
-    //         this.stopInterval = setInterval(() => {
-    //         if (value === "P") {
-    //             if (this.active <= 1) {
-    //                 this.active++;
-    //             } else {
-    //                 this.active = 0;
-    //             }
-    //         } else {
-    //             if (this.active >= 1) {
-    //             this.active--;
-    //         } else {
-    //             this.active = 2;
-    //         }
-    //         }
-    //     }, 3000)
-    //     },
-    // }
 }
 </script>
 
 <template>
-    <!-- section 1 -->
+
     <div id="container-hero" class="carousel slide h-100 w-100
     d-flex flex-column justify-content-center align-items-center">
+        <!-- card  -->
         <div class="carousel-inner">
             <div v-for="curElem, index in arrayImgSection1" class="carousel-item h-100 w-100"
                 :class="store.active === index ? 'active' : ''">
                 <AppCardHero :propCard="curElem" />
             </div>
         </div>
-        <button @click.prevent.stop="store.changeActive('L',active)" class="carousel-control-prev" type="button"
+        <!-- /card  -->
+
+        <!-- to move card -->
+        <button @click.prevent.stop="store.changeActiveFlash('L')" class="carousel-control-prev" type="button"
             data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button @click.prevent.stop="store.changeActive('P',active)" class="carousel-control-next" type="button"
+        <button @click.prevent.stop="store.changeActiveFlash('P')" class="carousel-control-next" type="button"
             data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+        <!-- /to move card -->
+
     </div>
 
-    <!-- /section 1 -->
 </template>
 
 <style scoped lang="scss">

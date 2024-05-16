@@ -20,11 +20,14 @@ export default{
 </script>
 
 <template>
+    <!-- /section logo -->
     <div class="d-flex mb-5">
         <div v-for="curElem in arrayLogo">
             <img :src="getImage(curElem)">
         </div>
     </div>
+    <!-- /section logo -->
+
 </template>
 
 <style lang="scss" scoped>

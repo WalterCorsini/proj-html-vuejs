@@ -11,7 +11,7 @@ export default {
     <div class="container d-flex pt-5">
         <div class="row">
             <div class="col-4 mt-5">
-                <h2>
+                <h2 class="title-font">
                     Il nome di fiducia per il tutoraggio a domicilio
                 </h2>
                 <span class="mb-5">

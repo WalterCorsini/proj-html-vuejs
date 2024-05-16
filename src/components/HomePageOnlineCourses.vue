@@ -1,7 +1,6 @@
 <script>
 import HomePageMiniButton from "./HomePageMiniButton.vue";
 import AppCardOnline from "./AppCardOnline.vue";
-import { store } from "../store";
 export default {
     components: {
         HomePageMiniButton,
@@ -9,9 +8,8 @@ export default {
     },
     data() {
         return {
-            store,
             arrayActive: [],
-            active: 0,
+            active: 1,
             arrayCard1: [
                 {
                     img: "1",
@@ -108,11 +106,17 @@ export default {
                     user: 15,
                 },
             ],
-
-
+            
+            
         }
     },
+    created() {
+        
+        this.arrayActive = this.arrayCard1;
+        this.changeActive("P",this.active);
+    },
     methods: {
+        // save array active to show in page
         getString() {
             if (this.active === 1) {
                 this.arrayActive = this.arrayCard1;
@@ -122,6 +126,7 @@ export default {
                 this.arrayActive = this.arrayCard3;
             }
         },
+        //  change value active
         changeActive(value) {
             clearInterval(this.stopInterval);
             this.stopInterval = setInterval(() => {
@@ -142,10 +147,6 @@ export default {
             }, 4000)
         },
     },
-    created() {
-        this.arrayActive = this.arrayCard1;
-        this.changeActive("P");
-    }
 }
 </script>
 
@@ -158,7 +159,7 @@ export default {
         <div class="container-absolute w-100">
             <div class="container-online-courses pt-5 m-auto
             d-flex flex-column justify-content-center align-items-center">
-                <span class="title fw-bold text-center">Popular Online Courses</span>
+                <span class="title fw-bold text-center title-font">Popular Online Courses</span>
                 <p class="text-center">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At aspernatur dolorem beatae tenetur quis?
                     Incidunt praesentium, quibusdam id voluptate ipsam corporis sequi voluptatem explicabo magni culpa
@@ -167,12 +168,10 @@ export default {
 
                 <!-- container card -->
                 <div class="container-card d-flex gap-3 mt-5 justify-content-around ">
-                    <!-- visualizza le 9 card ma non come nell'esempio usare  https://swiperjs.com/ -->
                     <div v-for="curCard, index in arrayActive"
                         class="card-courses d-flex flex-column justify-content-between">
                         <AppCardOnline :propCard="curCard" />
                     </div>
-
                 </div>
                 <!-- container card -->
 
@@ -207,7 +206,6 @@ export default {
         .title {
             font-family: serif;
             font-size: 40px;
-
         }
 
         p {
@@ -268,17 +266,6 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-    }
-
-    .btn-container{
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        background-color: $grey;
-        border-radius: 50%;
-        &:hover{
-            background-color: $darkgrey;
-        }
     }
 }
 </style>

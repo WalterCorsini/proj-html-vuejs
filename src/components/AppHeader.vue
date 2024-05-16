@@ -2,9 +2,7 @@
 export default {
   data() {
     return {
-
       activeIndex: 0,
-
       menu: [
         {
           title: "Home",

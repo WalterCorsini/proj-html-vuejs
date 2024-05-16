@@ -39,20 +39,19 @@ export default {
 </script>
 
 <template>
-    <!-- section icon -->
+
     <div class="container w-100">
         <div class="row justify-content-evenly mt-5">
+
+            <!-- Icon Card -->
             <div v-for="curElem in arrayIcon"
                 class="d-flex flex-column justife-content-center align-items-center col-2 p-3">
                 <AppCardIcon :propCard="curElem" :color="color" />
             </div>
+            <!-- /Icon Card -->
+
         </div>
     </div>
-    <!-- /section icon -->
-
-
-    <Transition name="fade">
-    </Transition>
 
 </template>
 

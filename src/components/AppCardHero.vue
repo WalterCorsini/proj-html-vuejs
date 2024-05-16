@@ -26,7 +26,7 @@ export default{
             d-flex flex-column justify-content-center align-items-center
             text-center w-100 h-100">
                     <div class="small-container w-50">
-                        <h2><strong>{{ propCard.title }}</strong></h2>
+                        <h2 class="title-font"><strong>{{ propCard.title }}</strong></h2>
                         <span>{{ propCard.subTitle }}</span>
                         <div class="btn">
                             <AppButton title="REGISTER NOW" />

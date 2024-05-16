@@ -43,7 +43,8 @@ export const store = reactive ({
     ],
     usersCount:168,
     eventsCount:348,
-    changeActive(value,active) {
+    active:0,
+    changeActive(value) {
         clearInterval(this.stopInterval);
         this.stopInterval = setInterval(() => {
         if (value === "P" || value=== "PL") {
@@ -61,5 +62,21 @@ export const store = reactive ({
         }
     }, 2000)
     },
-
+    changeActiveFlash(value){
+        clearInterval(this.stopInterval);
+        if (value === "P" || value=== "PL") {
+            if (this.active <= 1) {
+                this.active++;
+            } else {
+                this.active = 0;
+            }
+        } else {
+            if (this.active >= 1) {
+                this.active--;
+            } else {
+                this.active = 2;
+            }
+        }
+        this.changeActive(value,this.active);
+    },
 })

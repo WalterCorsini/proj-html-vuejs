@@ -14,11 +14,14 @@ export default {
         this.generateCount();
     },
     methods: {
+        // increment count to max
         generateCount() {
             if (this.viewCount <= this.count && this.viewCount+12 <= this.count) {
-                this.viewCount += 10;
+                this.viewCount += 13;
+                // if viewcount is <= to count call function with setTimeout
                 let nextCall = setTimeout(this.generateCount, 100);
             } else {
+                // else sum the difference and exit to function
                 let difference = this.count - this.viewCount;
                 this.viewCount+= difference;
             }
@@ -28,7 +31,6 @@ export default {
 </script>
 
 <template>
-
     <div class="pb-3 d-flex justify-content-around">
         <div class="count">
             <div class="mt-5 d-flex flex-column">

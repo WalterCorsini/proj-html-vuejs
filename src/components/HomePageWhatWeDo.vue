@@ -89,13 +89,17 @@ export default {
 <template>
     <div class="container mb-1">
         <div v-for="curElem, index in listArray" class="row">
+            <!-- left-container -->
             <div @click.stop="active = index" class="col-3">
                 <span class="d-block">
                     {{ curElem.name }}
                 </span>
             </div>
+            <!-- /left-container -->
+
+            <!-- right-container -->
             <div v-if="active === index" class="col-9 info h-100 p-2">
-                <h2>{{ curElem.title }}</h2>
+                <h2 class="title-font">{{ curElem.title }}</h2>
                 <p>{{ curElem.text }}</p>
                 <div class="list d-flex align-items-end w-100">
                     <div class="list-item col-8">
@@ -107,6 +111,8 @@ export default {
                     </div>
                 </div>
             </div>
+            <!-- right-container -->
+
         </div>
     </div>
 </template>
@@ -139,7 +145,6 @@ export default {
         }
     }
     
-    
     .info {
         position: absolute;
         top: 0;
@@ -164,9 +169,5 @@ export default {
         }
         
     }
-}
-.isActive{
-    color: $primary_color !important;
-    border-left: 8px solid $primary_color !important;
 }
 </style>
