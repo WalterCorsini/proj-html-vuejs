@@ -137,7 +137,7 @@ export default {
                     }
                 }
                 this.getString();
-            }, 2000)
+            }, 4000)
         },
     },
     created() {
@@ -170,23 +170,6 @@ export default {
                         class="card-courses d-flex flex-column justify-content-between">
                         <AppCardOnline :propCard="curCard" />
                     </div>
-
-                    <!-- button previous and next -->
-                    <button @click.prevent.stop="changeActive('L')" class="carousel-control-prev" type="button"
-                        data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <div class="btn-container d-flex justify-content-center align-items-center">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                        </div>
-                    </button>
-                    <button @click.prevent.stop="changeActive('P')" class="carousel-control-next d-flex justify-content-center align-items-center" type="button"
-                        data-bs-target="#carouselExample" data-bs-slide="next">
-                        <div class="btn-container d-flex justify-content-center align-items-center">
-                            <span class="carousel-control-next-icon d-flex flex" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </div>
-                    </button>
-                    <!-- button previous and next -->
 
                 </div>
                 <!-- container card -->
