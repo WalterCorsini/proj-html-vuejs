@@ -18,11 +18,11 @@ export default {
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="heading1l">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse1l" aria-expanded="false" aria-controls="collapse1l">
+                                data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse1l">
                                 Can I just enroll in a single course?
                             </button>
                         </h2>
-                        <div id="collapse1l" class="accordion-collapse collapse show"
+                        <div id="collapse11" class="accordion-collapse collapse show"
                             data-bs-parent="#accordionExampleLft" role="region" aria-labelledby="heading1l">
                             <div class="accordion-body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam id in impedit corrupti tempore natus recusandae qui aperiam voluptas, quos repellat quasi veniam quae molestias vero. Minima, quia vero?
@@ -64,11 +64,11 @@ export default {
                     <div class="accordion-item">
                         <h2 class="accordion-header " id="heading3l">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse3l" aria-expanded="false" aria-controls="collapse3l">
+                                data-bs-target="#collapse4l" aria-expanded="false" aria-controls="collapse4l">
                                 Do I need to take the courses in a specific order?
                             </button>
                         </h2>
-                        <div id="collapse3l" class="accordion-collapse collapse" data-bs-parent="#accordionExampleLft"
+                        <div id="collapse4l" class="accordion-collapse collapse" data-bs-parent="#accordionExampleLft"
                             role="region" aria-labelledby="heading3l">
                             <div class="accordion-body">
                                 Vestibulum hendrerit ultrices nibh, sed pharetra lacus ultrices eget. Morbi et ipsum et
