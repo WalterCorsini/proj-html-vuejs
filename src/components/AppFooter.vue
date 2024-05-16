@@ -25,7 +25,18 @@ export default {
                     cours: "Business English",
                     teacher: "Jennie King",
                 },
+            ],
+            menu: [
+                {
+                    title: "/About",
+                    routeName: "about"
+                }
             ]
+        }
+    },
+    methods: {
+        topFunction() {
+            document.documentElement.scrollTop = 0;
         }
     }
 }
@@ -46,13 +57,17 @@ export default {
                 <!-- contatti e orari -->
                 <div class="text-white ms_num_time">
                     <ul>
-                        <li class="mb-3">
-                            <i class="fa-solid fa-phone"></i>
-                            <span class="px-2">1-677-124-44227</span>
+                        <li class="mb-3" @click="topFunction">
+                            <router-link :to="{ name: item.routeName }" v-for="item in menu" class="nav-link">
+                                <i class="fa-solid fa-phone"></i>
+                                <span class="px-2">1-677-124-44227</span>
+                            </router-link>
                         </li>
-                        <li class="mb-3">
-                            <i class="fa-regular fa-clock"></i>
-                            <span class="px-2">Mon - Sat 8.00 - 18.00</span>
+                        <li class="mb-3" @click="topFunction">
+                            <router-link :to="{ name: item.routeName }" v-for="item in menu" class="nav-link">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="px-2">Mon - Sat 8.00 - 18.00</span>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -110,7 +125,7 @@ footer {
     }
 
     .ms_blue-hover:hover,
-    li:hover > i {
+    li:hover i {
         color: #40c4ff;
     }
 

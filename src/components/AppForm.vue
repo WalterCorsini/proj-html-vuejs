@@ -1,8 +1,12 @@
 <script>
+import AppButton from "./AppButton.vue";
 export default {
+    components: {
+        AppButton,
+    },
     data() {
         return {
-
+            btnElem: "SUBMIT"
         }
     }
 }
@@ -27,7 +31,7 @@ export default {
             <textarea class="form-control border rounded-0 bg-body-tertiary shadow-none" required id="message" rows="3"></textarea>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">SUBMIT</button>
+            <AppButton :title="btnElem" />
         </div>
     </form>
 </template>
