@@ -2,7 +2,6 @@
 export default {
     props: {
         count: Number,
-        step: Number,
         text: String,
     },
     data() {
@@ -15,9 +14,12 @@ export default {
     },
     methods: {
         generateCount() {
-            if (this.viewCount <= this.count - this.step) {
-                this.viewCount += this.step;
+            if (this.viewCount <= this.count && this.viewCount+12 <= this.count) {
+                this.viewCount += 10;
                 let nextCall = setTimeout(this.generateCount, 100);
+            } else {
+                let difference = this.count - this.viewCount;
+                this.viewCount+= difference;
             }
         },
     }

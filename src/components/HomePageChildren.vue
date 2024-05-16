@@ -30,8 +30,8 @@ export default {
                     ipsa tenetur illum.
                 </span>
                 <div class="pb-3 d-flex justify-content-around">
-                    <AppCount :count="store.usersCount" :step="7" text="Storie degli utenti"/>
-                    <AppCount :count="store.eventsCount" :step="12" text="Eventi"/>
+                    <AppCount :count="store.usersCount" text="Storie degli utenti"/>
+                    <AppCount :count="store.eventsCount" text="Eventi"/>
                     <!-- <div class="count">
                         <div class="mt-5 d-flex flex-column">
                             <a href="">{{ contatoreUser }}</a>
