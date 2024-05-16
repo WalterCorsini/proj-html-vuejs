@@ -1,5 +1,6 @@
 <script>
 import AppCardStudent from "./AppCardStudent.vue";
+import { store } from "../store";
 
 export default {
     props: {
@@ -10,7 +11,8 @@ export default {
     },
     data() {
         return {
-            active: 0,
+            active:0,
+            store,
             arrayPeople: [
                 {
                     img: "_1",
@@ -34,49 +36,29 @@ export default {
         }
     },
     created() {
-        this.changeActive("P");
+        this.store.changeActive("PL",this.active);
     },
-    methods: {
-        changeActive(value) {
-            clearInterval(this.stopInterval);
-            this.stopInterval = setInterval(() => {
-            if (value === "P") {
-                if (this.active <= 1) {
-                    this.active++;
-                } else {
-                    this.active = 0;
-                }
-            } else {
-                if (this.active >= 1) {
-                    this.active--;
-                } else {
-                    this.active = 2;
-                }
-            }
-        }, 2000)
-        },
-    }
 }
 </script>
 
 <template>
     <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
-        <div :class="index === active ? 'd-flex' : 'd-none'" v-for="curElem, index in propCard"
+        <div :class="index === store.active ? 'd-flex' : 'd-none'" v-for="curElem, index in propCard"
             class="card d-flex justify-content-center align-items-center h-100 p-2">
             <AppCardStudent :propCard="curElem" />
             <div class="d-flex flex-row gap-3">
-                <i @click.stop="active = index" :class="active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle"
+                <i @click.stop="store.active = index" :class="store.active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle"
                     v-for="curElem, index in arrayPeople"></i>
             </div>
 
 
         </div>
-        <button @click.prevent.stop="changeActive('L')" class="carousel-control-prev" type="button"
+        <button @click.prevent.stop="store.changeActive('L',active)" class="carousel-control-prev" type="button"
             data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button @click.prevent.stop="changeActive('P')" class="carousel-control-next" type="button"
+        <button @click.prevent.stop="store.changeActive('PL',active)" class="carousel-control-next" type="button"
             data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>

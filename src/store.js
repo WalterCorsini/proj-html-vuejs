@@ -43,5 +43,23 @@ export const store = reactive ({
     ],
     usersCount:168,
     eventsCount:348,
+    changeActive(value,active) {
+        clearInterval(this.stopInterval);
+        this.stopInterval = setInterval(() => {
+        if (value === "P" || value=== "PL") {
+            if (this.active <= 1) {
+                this.active++;
+            } else {
+                this.active = 0;
+            }
+        } else {
+            if (this.active >= 1) {
+                this.active--;
+            } else {
+                this.active = 2;
+            }
+        }
+    }, 2000)
+    },
 
 })

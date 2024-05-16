@@ -1,6 +1,7 @@
 <script>
 import HomePageMiniButton from "./HomePageMiniButton.vue";
 import AppCardOnline from "./AppCardOnline.vue";
+import { store } from "../store";
 export default {
     components: {
         HomePageMiniButton,
@@ -8,8 +9,9 @@ export default {
     },
     data() {
         return {
+            store,
             arrayActive: [],
-            active: 1,
+            active: 0,
             arrayCard1: [
                 {
                     img: "1",

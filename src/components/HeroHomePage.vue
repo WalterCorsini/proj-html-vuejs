@@ -1,6 +1,7 @@
 <script>
 import AppButton from "../components/AppButton.vue";
-import AppCardHero from "../components/AppCardHero.vue"
+import AppCardHero from "../components/AppCardHero.vue";
+import { store } from "../store";
 export default {
     components: {
         AppButton,
@@ -8,9 +9,9 @@ export default {
     },
     data() {
         return {
+            store,
+            active:0,
             stopInterval:"",
-            // active variable
-            active: 0,
             // array photo and text
             arrayImgSection1: [
                 {
@@ -32,29 +33,29 @@ export default {
         }
     },
     created() {
-        this.changeActive("P");
+        this.store.changeActive("P",this.active);
     },
-    methods: {
-        // change active elem next
-        changeActive(value) {
-            clearInterval(this.stopInterval);
-            this.stopInterval = setInterval(() => {
-            if (value === "P") {
-                if (this.active <= 1) {
-                    this.active++;
-                } else {
-                    this.active = 0;
-                }
-            } else {
-                if (this.active >= 1) {
-                this.active--;
-            } else {
-                this.active = 2;
-            }
-            }
-        }, 3000)
-        },
-    }
+    // methods: {
+    //     // change active elem next
+    //     changeActive(value) {
+    //         clearInterval(this.stopInterval);
+    //         this.stopInterval = setInterval(() => {
+    //         if (value === "P") {
+    //             if (this.active <= 1) {
+    //                 this.active++;
+    //             } else {
+    //                 this.active = 0;
+    //             }
+    //         } else {
+    //             if (this.active >= 1) {
+    //             this.active--;
+    //         } else {
+    //             this.active = 2;
+    //         }
+    //         }
+    //     }, 3000)
+    //     },
+    // }
 }
 </script>
 
@@ -64,16 +65,16 @@ export default {
     d-flex flex-column justify-content-center align-items-center">
         <div class="carousel-inner">
             <div v-for="curElem, index in arrayImgSection1" class="carousel-item h-100 w-100"
-                :class="active === index ? 'active' : ''">
+                :class="store.active === index ? 'active' : ''">
                 <AppCardHero :propCard="curElem" />
             </div>
         </div>
-        <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"
+        <button @click.prevent.stop="store.changeActive('L',active)" class="carousel-control-prev" type="button"
             data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button @click.prevent.stop="changeActive(P)" class="carousel-control-next" type="button"
+        <button @click.prevent.stop="store.changeActive('P',active)" class="carousel-control-next" type="button"
             data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
