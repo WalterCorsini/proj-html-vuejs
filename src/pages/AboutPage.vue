@@ -1,6 +1,5 @@
 <script>
 import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
-import AboutPageQuotes from '../components/AboutPageQuotes.vue'
 import AboutPageFaq from '../components/AboutPageFaq.vue'
 import AppJumbotron from '../components/AppJumbotron.vue'
 import HomePageStudent from '../components/HomePageStudent.vue'
@@ -11,7 +10,7 @@ import SideButtons from '../components/SideButtons.vue'
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount, AppTopButton, SideButtons },
+    components: { AboutPageTutorCard, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount, AppTopButton, SideButtons },
     data() {
         return {
 
@@ -90,16 +89,6 @@ export default {
                 <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi doloremque inventore
                     eius dolorem, sapiente, dicta atque nulla harum magni ipsa dolor vero unde esse in error eos nam
                     odio minima?</p>
-                <!-- <div class="data title-font primary-color">
-                    <div class="user-stories">
-                        <p class="num">168</p>
-                        <p>User Stories</p>
-                    </div>
-                    <div class="scheduled-events">
-                        <p class="num">237</p>
-                        <p>Scheduled Events</p>
-                    </div>
-                </div> -->
                 <div class="count">
                     <AppCount :count="store.usersCount" :step="7" color="rgb(64, 196, 255)" text="Storie degli utenti"/>
                     <AppCount :count="store.eventsCount" :step="12" color="rgb(64, 196, 255)" text="Eventi"/>
