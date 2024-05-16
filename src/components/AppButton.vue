@@ -7,21 +7,24 @@ export default {
 </script>
 
 <template>
-    <div class="mb-1">
+
+    <button class="mb-1">
         <a class="fw-bold" @click.prevent href="">
             {{ title }}
         </a>
-    </div>
+    </button>
+    
 </template>
 
 <style lang="scss" scoped>
 @use "../style/partials/variables" as *;
 
-div {
+button {
     background-color: $primary-color;
     padding: 20px 40px;
     text-align: center;
     transition: 1s;
+    border: 0;
 
     &:hover {
         background-color: $dark-primary;
