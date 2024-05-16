@@ -3,13 +3,15 @@ import AppJumbotron from "../components/AppJumbotron.vue";
 import ContactOfficeAndForm from "../components/ContactOfficeAndForm.vue";
 import ContactMap from "../components/ContactMap.vue";
 import ContactSocialsAndNews from "../components/ContactSocialsAndNews.vue";
+import AppTopButton from "../components/AppTopButton.vue";
 
 export default{
     components: {
         AppJumbotron,
         ContactOfficeAndForm,
         ContactMap,
-        ContactSocialsAndNews
+        ContactSocialsAndNews,
+        AppTopButton
     },
     data(){
         return{
@@ -28,6 +30,7 @@ export default{
     <ContactOfficeAndForm />
     <ContactMap />
     <ContactSocialsAndNews />
+    <AppTopButton />
 </main>
 </template>
 
