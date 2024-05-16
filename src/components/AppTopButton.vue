@@ -43,8 +43,18 @@ export default {
         font-size: 12px;
     }
 
-    &:hover span{
-        display: none;
+    &:hover{
+        span {
+            opacity: 0;
+        }
+        i {
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    i {
+        transition: transform 0.3s ease;
     }
 }
 </style>
