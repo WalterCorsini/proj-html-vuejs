@@ -45,7 +45,7 @@ export default {
             <!--  component card -->
             <AppCardStudent :propCard="curElem" />
             <div class="d-flex flex-row gap-3">
-                
+
                 <!-- create circle icon for all elements... -->
                 <i @click.stop="store.active = index" :class="store.active === index ? 'fa-solid' : 'fa-regular'" class="fa-circle"
                     v-for="curElem, index in arrayPeople"></i>
@@ -93,6 +93,18 @@ export default {
             width: 80px;
         }
 
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index: 100;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 </style>

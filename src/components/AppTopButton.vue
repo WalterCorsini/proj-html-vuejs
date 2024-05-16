@@ -13,18 +13,15 @@ export default {
             document.documentElement.scrollTop = 0;
         },
         handleScroll: function () {
-            this.show = window.scrollY > 200;
+            this.show = window.scrollY > 500;
         }
     }
 }
 </script>
 
 <template>
-    <div 
-    class="text-white d-flex flex-column justify-content-center align-items-center position-fixed bottom-0 end-0 ms_aspect" 
-    @click="toTop" 
-    v-if="show"
-    >
+    <div class="text-white d-flex flex-column justify-content-center align-items-center position-fixed bottom-0 end-0 ms_aspect"
+        @click="toTop" v-if="show">
         <i class="fa-solid fa-chevron-up"></i>
         <span>TOP</span>
     </div>
@@ -43,10 +40,11 @@ export default {
         font-size: 12px;
     }
 
-    &:hover{
+    &:hover {
         span {
             opacity: 0;
         }
+
         i {
             transform: translateY(10px);
             transition: transform 0.3s ease;
