@@ -38,6 +38,7 @@ section {
     right: 0;
     font-size: 9px;
     letter-spacing: .11em;
+    z-index: 99;
 
     .ms_color {
         color: #ef2853;

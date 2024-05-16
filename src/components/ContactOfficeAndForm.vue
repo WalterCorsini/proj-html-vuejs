@@ -33,13 +33,13 @@ export default {
     <div class="container py-5">
         <div class="row">
             <!-- contact detail -->
-            <div class="col">
+            <div class="col-md-12 col-lg-5">
                 <h1 class="title-font">Contact Details</h1>
                 <p class="ms_color-grey">Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin, quis bibendum auci elit consequat.</p> 
                 <!-- office list -->
                 <AppCardOffice :propCard="offices" />
             </div>
-            <div class="col-7 border p-0">
+            <div class="col-md-12 col-lg-7 border p-0">
                 <!-- form title -->
                 <div class="border-bottom bg-body-tertiary p-3">
                     <p class="m-0 ms_form-title">GET IN TOUCH</p>
