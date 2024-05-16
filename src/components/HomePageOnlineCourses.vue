@@ -111,18 +111,38 @@ export default {
         }
     },
     methods: {
-        getString(number) {
-            if (number === 1) {
+        getString() {
+            if (this.active === 1) {
                 this.arrayActive = this.arrayCard1;
-            } else if (number === 2) {
+            } else if (this.active === 2) {
                 this.arrayActive = this.arrayCard2;
             } else {
                 this.arrayActive = this.arrayCard3;
             }
-        }
+        },
+        changeActive(value) {
+            clearInterval(this.stopInterval);
+            this.stopInterval = setInterval(() => {
+                if (value === "P") {
+                    if (this.active <= 1) {
+                        this.active++;
+                    } else {
+                        this.active = 0;
+                    }
+                } else {
+                    if (this.active >= 1) {
+                        this.active--;
+                    } else {
+                        this.active = 2;
+                    }
+                }
+                this.getString();
+            }, 2000)
+        },
     },
     created() {
         this.arrayActive = this.arrayCard1;
+        this.changeActive("P");
     }
 }
 </script>
@@ -154,13 +174,17 @@ export default {
                     <!-- button previous and next -->
                     <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <div class="btn-container d-flex justify-content-center align-items-center">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
+                        </div>
                     </button>
-                    <button @click.prevent.stop="changeActive(P)" class="carousel-control-next" type="button"
+                    <button @click.prevent.stop="changeActive(P)" class="carousel-control-next d-flex justify-content-center align-items-center" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                        <div class="btn-container d-flex justify-content-center align-items-center">
+                            <span class="carousel-control-next-icon d-flex flex" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </div>
                     </button>
                     <!-- button previous and next -->
 
@@ -169,11 +193,11 @@ export default {
 
                 <!-- icon slider -->
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString(active)" :class="active === 1 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 1, getString()" :class="active === 1 ? 'blue' : 'lightblue'"
                         class="fa-circle fa-solid"></i>
-                    <i @click.stop="active = 2, getString(active)" :class="active === 2 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 2, getString()" :class="active === 2 ? 'blue' : 'lightblue'"
                         class="fa-circle fa solid"></i>
-                    <i @click.stop="active = 3, getString(active)" :class="active === 3 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 3, getString()" :class="active === 3 ? 'blue' : 'lightblue'"
                         class="fa-circle fa-solid"></i>
                 </div>
                 <!-- /icon slider -->
@@ -192,77 +216,84 @@ export default {
     max-width: 100%;
 
 
-        .container-online-courses {
-            width: 70%;
+    .container-online-courses {
+        width: 70%;
 
-            .title {
-                font-family: serif;
-                font-size: 40px;
+        .title {
+            font-family: serif;
+            font-size: 40px;
 
-            }
+        }
 
-            p {
-                color: $grey;
-            }
+        p {
+            color: $grey;
+        }
 
-            .container-card {
-                width: 100%;
+        .container-card {
+            width: 100%;
 
-                .card-courses {
-                    width: calc(100% / 3);
-                    height: 60vh;
-                    border: 1px solid lightgrey;
+            .card-courses {
+                width: calc(100% / 3);
+                height: 60vh;
+                border: 1px solid lightgrey;
 
-                    .card-text {
-                        position: relative;
+                .card-text {
+                    position: relative;
 
-                        div {
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                        }
-                    }
-
-                    span {
-                        display: block;
-                    }
-
-                    .title-card {
-                        font-family: serif;
-                        font-size: 18px;
-                    }
-
-                    .text-card,
-                    i,
-                    span {
-                        margin: 5px 0;
-                        font-size: 12px;
-                        color: $grey;
+                    div {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
                     }
                 }
-            }
 
-            .icon {
-                font-size: 20px;
-            }
+                span {
+                    display: block;
+                }
 
-            .blue {
-                color: $primary-color;
-            }
+                .title-card {
+                    font-family: serif;
+                    font-size: 18px;
+                }
 
-            .lightblue {
-                color: lightblue;
+                .text-card,
+                i,
+                span {
+                    margin: 5px 0;
+                    font-size: 12px;
+                    color: $grey;
+                }
             }
         }
-        .container-absolute {
+
+        .icon {
+            font-size: 20px;
+        }
+
+        .blue {
+            color: $primary-color;
+        }
+
+        .lightblue {
+            color: lightblue;
+        }
+    }
+
+    .container-absolute {
         position: absolute;
         top: 0;
         left: 0;
-        }
-    
-    button{
-        color: $black;
     }
 
+    .btn-container{
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: $grey;
+        border-radius: 50%;
+        &:hover{
+            background-color: $darkgrey;
+        }
+    }
 }
 </style>
