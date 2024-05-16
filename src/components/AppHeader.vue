@@ -38,7 +38,7 @@ export default {
     </div>
     <ul class="navigation">
       <li v-for="(item, index) in menu">
-        <router-link :to="{ name: item.routeName }" class="nav-link" :class="{ 'primary-color': activeIndex === index }" @click="activeIndex = index">{{
+        <router-link :to="{ name: item.routeName }" class="nav-link" :class="{ 'blue': activeIndex === index }" @click="activeIndex = index">{{
           item.title
         }}</router-link>
       </li>
@@ -73,7 +73,7 @@ export default {
 }
 
 .blue {
-  color: blue;
+  color: $primary-color;
 }
 
 .nav-link::before {
