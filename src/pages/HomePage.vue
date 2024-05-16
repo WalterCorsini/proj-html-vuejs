@@ -9,6 +9,7 @@ import HomePageOnlineCourses from "../components/HomePageOnlineCourses.vue";
 import HomePageBestTutor from "../components/HomePageBestTutor.vue";
 import HomePagePricing  from "../components/HomePagePricing.vue"
 import HomePageLogoSlider from "../components/HomePageLogoSlider.vue";
+import AppTopButton from "../components/AppTopButton.vue";
 import { store } from "../store";
 
 
@@ -24,6 +25,7 @@ export default {
         HomePageBestTutor,
         HomePagePricing,
         HomePageLogoSlider,
+        AppTopButton,
     },
     data() {
         return {
@@ -34,6 +36,7 @@ export default {
 </script>
 
 <template>
+    <AppTopButton />
     <HeroHomePage />
     <HomePageTutor />
     <HomePageTutorAtHome />
