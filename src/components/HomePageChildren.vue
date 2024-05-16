@@ -1,30 +1,14 @@
 <script>
+import { store } from '../store';
+import AppCount from "./AppCount.vue";
 export default {
+    components:{
+        AppCount,
+    },
     data() {
         return {
-            contatoreUser: 0,
-            contatoreEvent: 0,
-            user:168,
-            event:348,
+            store,
         };
-    },
-    created() {
-        this.generateCountUser();
-        this.generateCountEvents();
-    },
-    methods: {
-        generateCountUser(){
-            if(this.contatoreUser<=this.user-7){
-                this.contatoreUser+=7;
-                let nextCall=setTimeout(this.generateCountUser,100);
-            }
-        },
-        generateCountEvents(){
-            if(this.contatoreEvent<=this.event-12){
-                this.contatoreEvent+=12;
-                let nextCall=setTimeout(this.generateCountEvents,100);
-            }
-        }
     },
 }
 </script>
@@ -46,7 +30,9 @@ export default {
                     ipsa tenetur illum.
                 </span>
                 <div class="pb-3 d-flex justify-content-around">
-                    <div class="count">
+                    <AppCount :count="store.usersCount" :step="7" text="Storie degli utenti"/>
+                    <AppCount :count="store.eventsCount" :step="12" text="Eventi"/>
+                    <!-- <div class="count">
                         <div class="mt-5 d-flex flex-column">
                             <a href="">{{ contatoreUser }}</a>
                             <span>Storie degli utenti</span>
@@ -59,7 +45,7 @@ export default {
                             </div>
                                 <span>Eventi</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

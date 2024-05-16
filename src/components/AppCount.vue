@@ -1,0 +1,59 @@
+<script>
+export default {
+    props: {
+        count: Number,
+        step: Number,
+        text: String,
+    },
+    data() {
+        return {
+            viewCount: 0,
+        }
+    },
+    created() {
+        this.generateCount();
+    },
+    methods: {
+        generateCount() {
+            if (this.viewCount <= this.count - this.step) {
+                this.viewCount += this.step;
+                let nextCall = setTimeout(this.generateCount, 100);
+            }
+        },
+    }
+}
+</script>
+
+<template>
+
+    <div class="pb-3 d-flex justify-content-around">
+        <div class="count">
+            <div class="mt-5 d-flex flex-column">
+                <a href="">{{ viewCount }}</a>
+                <span>{{ text }}</span>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
+.count div:first-child {
+    font-family: serif;
+    font-size: 36px;
+    color: $primary-color;
+    font-weight: 700;
+    cursor: pointer;
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+    }
+}
+</style>

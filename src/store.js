@@ -40,6 +40,8 @@ export const store = reactive ({
             role: "Student",
             text: "andarono a chiamare un altro elefante"
         },
-    ]
+    ],
+    usersCount:168,
+    eventsCount:348,
 
 })
