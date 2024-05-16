@@ -3,6 +3,7 @@ export default {
     props: {
         count: Number,
         text: String,
+        color: String,
     },
     data() {
         return {
@@ -31,8 +32,8 @@ export default {
     <div class="pb-3 d-flex justify-content-around">
         <div class="count">
             <div class="mt-5 d-flex flex-column">
-                <a href="">{{ viewCount }}</a>
-                <span>{{ text }}</span>
+                <a href="" :style="{'color' : `${color}`}">{{ viewCount }}</a>
+                <span :style="{'color' : `${color}`}">{{ text }}</span>
             </div>
         </div>
     </div>
@@ -45,7 +46,6 @@ export default {
 .count div:first-child {
     font-family: serif;
     font-size: 36px;
-    color: $primary-color;
     font-weight: 700;
     cursor: pointer;
 
@@ -55,7 +55,6 @@ export default {
 
     a {
         text-decoration: none;
-        color: $primary-color;
     }
 }
 </style>
