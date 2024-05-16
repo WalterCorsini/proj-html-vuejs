@@ -5,10 +5,11 @@ import AboutPageFaq from '../components/AboutPageFaq.vue'
 import AppJumbotron from '../components/AppJumbotron.vue'
 import HomePageStudent from '../components/HomePageStudent.vue'
 import { store } from '../store'
+import AppCount from '../components/AppCount.vue'
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent },
+    components: { AboutPageTutorCard, AboutPageQuotes, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount },
     data() {
         return {
 
@@ -87,7 +88,7 @@ export default {
                 <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi doloremque inventore
                     eius dolorem, sapiente, dicta atque nulla harum magni ipsa dolor vero unde esse in error eos nam
                     odio minima?</p>
-                <div class="data title-font primary-color">
+                <!-- <div class="data title-font primary-color">
                     <div class="user-stories">
                         <p class="num">168</p>
                         <p>User Stories</p>
@@ -96,13 +97,18 @@ export default {
                         <p class="num">237</p>
                         <p>Scheduled Events</p>
                     </div>
+                </div> -->
+                <div class="count">
+                    <AppCount :count="store.usersCount" :step="7" color="rgb(64, 196, 255)" text="Storie degli utenti"/>
+                    <AppCount :count="store.eventsCount" :step="12" color="rgb(64, 196, 255)" text="Eventi"/>
                 </div>
             </div>
 
             <!-- Children section video -->
             <div class="video">
                 <!-- Debug -->
-                <img src="../assets/img/about-page/test.jpg" alt="">
+                <!-- <img src="../assets/img/about-page/test.jpg" alt=""> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RbGpUemSXAA?si=5z39_8Y3dDBD8oll" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -161,14 +167,10 @@ export default {
             }
 
 
-            .data {
-                @include flex($justify-content: flex-start);
-                gap: 100px;
-                
 
-                .num {
-                    font-size: 3rem;
-                }
+            .count {
+                @include flex($justify-content: flex-start);
+                gap: 100px;     
 
             }
 
