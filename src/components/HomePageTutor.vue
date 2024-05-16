@@ -9,27 +9,33 @@ export default{
                 arrayIcon: [
                     {
                         name:"Languages",
-                        img: "_1"
+                        img: "_1",
+                        color:"rgb(245, 245, 245)",
                     },
                     {
                         name:"Software",
-                        img: "_2"
+                        img: "_2",
+                        color:"rgb(245, 245, 245)",
                     },
                     {
                         name:"Business",
-                        img: "_3"
+                        img: "_3",
+                        color:"rgb(245, 245, 245)",
                     },
                     {
                         name:"Chemistry",
-                        img: "_4"
+                        img: "_4",
+                        color:"rgb(245, 245, 245)",
                     },
                     {
                         name:"Science",
-                        img: "_5"
+                        img: "_5",
+                        color:"rgb(245, 245, 245)",
                     },
                     {
                         name:"DIY&Craft",
-                        img: "_6"
+                        img: "_6",
+                        color:"rgb(245, 245, 245)",
                     },
                 ]
         }
