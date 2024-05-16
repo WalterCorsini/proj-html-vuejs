@@ -47,7 +47,7 @@ export default {
     <div class="container">
         <!-- upper footer -->
         <div class="row">
-            <div class="col">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <!-- logo iAcademy -->
                 <img src="../assets/img/contact_and_footer/logo.png" alt="" class="ms_logo pb-5">
         
@@ -73,25 +73,25 @@ export default {
                 </div>
             </div>
 
-            <div class="col">
-                <h4 class="pb-5 m-0 text-white">Popular Courses</h4>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <h4 class="pb-5 m-0 text-white title-font">Popular Courses</h4>
                 <ul>
                     <li v-for="item in coursesList" class="mb-3">
-                        <h5 class="ms_blue-hover"><a href="#">{{ item.cours }}</a></h5>
+                        <h5 class="ms_blue-hover title-font"><a href="#">{{ item.cours }}</a></h5>
                         <span class="ms_grey-hover"><a href="#">{{ item.teacher }}</a></span>
                     </li>
                 </ul>
             </div>
 
-            <div class="col">
-                <h4 class="pb-5 m-0 text-white">Support</h4>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <h4 class="pb-5 m-0 text-white title-font">Support</h4>
                 <ul>
                     <li v-for="link in supportList" class="mb-3 ms_blue-hover"><a href="#">{{ link }}</a></li>
                 </ul>
             </div>
 
-            <div class="col">
-                <h4 class="pb-5 m-0 text-white">Flexible Learning</h4>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <h4 class="pb-5 m-0 text-white title-font">Flexible Learning</h4>
                 <img src="../assets/img/contact_and_footer/footer-img-1.png" alt="" class="ms_map">
             </div>
         </div>
@@ -99,9 +99,9 @@ export default {
         <hr>
 
         <div class="row ms_bottom_footer">
-            <div class="col-7"><a href="#">© 2017 Qode Interactive, All Rights Reserved</a></div>
-            <div class="col-2 text-center">CALL +44 300 303 0266</div>
-            <div class="col-2 text-center">FOLLOW US</div>
+            <div class="col-lg-7 col-md-5 col-sm-3"><a href="#">© 2017 Qode Interactive, All Rights Reserved</a></div>
+            <div class="col-lg-2 col text-center">CALL +44 300 303 0266</div>
+            <div class="col-lg-2 col text-center">FOLLOW US</div>
             <div class="col">
                 <ul class="d-flex justify-content-between">
                     <li><a href="#"><i class="fa-brands fa-twitter ms_blue-hover"></i></a></li>
@@ -137,10 +137,6 @@ footer {
         font-size: 0.8rem;
     }
 
-    ul {
-        padding: 0;
-    }
-
     a {
         color: inherit;
         text-decoration: none;
@@ -152,11 +148,6 @@ footer {
 
     img.ms_logo {
         width: 150px;
-    }
-
-    h4, h5 {
-        font-family: Merriweather,serif;
-        font-weight: 700;
     }
 
     .ms_num_time {
