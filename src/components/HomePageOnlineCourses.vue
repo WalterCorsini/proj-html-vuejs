@@ -172,14 +172,14 @@ export default {
                     </div>
 
                     <!-- button previous and next -->
-                    <button @click.prevent.stop="changeActive(L)" class="carousel-control-prev" type="button"
+                    <button @click.prevent.stop="changeActive('L')" class="carousel-control-prev" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="prev">
                         <div class="btn-container d-flex justify-content-center align-items-center">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                         </div>
                     </button>
-                    <button @click.prevent.stop="changeActive(P)" class="carousel-control-next d-flex justify-content-center align-items-center" type="button"
+                    <button @click.prevent.stop="changeActive('P')" class="carousel-control-next d-flex justify-content-center align-items-center" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="next">
                         <div class="btn-container d-flex justify-content-center align-items-center">
                             <span class="carousel-control-next-icon d-flex flex" aria-hidden="true"></span>
@@ -193,11 +193,11 @@ export default {
 
                 <!-- icon slider -->
                 <div class="icon d-flex gap-3 p-5">
-                    <i @click.stop="active = 1, getString()" :class="active === 1 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 0, getString()" :class="active === 0 ? 'blue' : 'lightblue'"
                         class="fa-circle fa-solid"></i>
-                    <i @click.stop="active = 2, getString()" :class="active === 2 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 1, getString()" :class="active === 1 ? 'blue' : 'lightblue'"
                         class="fa-circle fa solid"></i>
-                    <i @click.stop="active = 3, getString()" :class="active === 3 ? 'blue' : 'lightblue'"
+                    <i @click.stop="active = 2, getString()" :class="active === 2 ? 'blue' : 'lightblue'"
                         class="fa-circle fa-solid"></i>
                 </div>
                 <!-- /icon slider -->
