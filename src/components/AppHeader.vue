@@ -2,21 +2,33 @@
 export default {
   data() {
     return {
+
+      activeIndex: 0,
+
       menu: [
         {
           title: "Home",
           routeName: "home",
+          isActive: false,
         },
         {
           title: "Chi Siamo",
           routeName: "about",
+          isActive: false,
 
         },
         {
           title: "Contatti",
           routeName: "contacts",
+          isActive: false,
+
         },
       ],
+    }
+  },
+  methods: {
+    changeActive(){
+      this.activeIndex = index
     }
   }
 }
@@ -28,8 +40,8 @@ export default {
       <img src="../assets/img/header/logo.png" alt="Logo iAcademy" />
     </div>
     <ul class="navigation">
-      <li v-for="item in menu">
-        <router-link :to="{ name: item.routeName }" class="nav-link">{{
+      <li v-for="(item, index) in menu">
+        <router-link :to="{ name: item.routeName }" class="nav-link" :class="{ 'blue': this.activeIndex === index }" @click="changeActive()">{{
           item.title
         }}</router-link>
       </li>
@@ -39,6 +51,8 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
+@use "../style/partials/variables" as *;
+
 
 .container {
   @include flex(row, space-between, center, nowrap);
@@ -55,5 +69,33 @@ export default {
   }
 }
 
+.nav-link {
+  // color: black;
+  position: relative;
+  text-decoration: none;
+}
+
+.blue {
+  color: blue;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  bottom: -5px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
 
 </style>

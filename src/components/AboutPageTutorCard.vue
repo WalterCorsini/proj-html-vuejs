@@ -7,12 +7,12 @@ export default {
 
     data() {
         return {
-            
+
         }
     },
 
     methods: {
-        getImgUrl(elem){
+        getImgUrl(elem) {
             return new URL(`../assets/img/about-page/cvimg${elem}.jpg`, import.meta.url).href;
         }
     }
@@ -28,7 +28,7 @@ export default {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{cardObj.name}}</h5>
+                    <h5 class="card-title">{{ cardObj.name }}</h5>
                     <p class="card-text">{{ cardObj.role }}</p>
                 </div>
             </div>
@@ -37,7 +37,18 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.col-md-4{
+.card {
+    transition: box-shadow .3s;
+    border: 1px solid #ccc;
+    background: #fff;
+
+}
+
+.card:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.col-md-4 {
     padding: 20px;
 
     img {
@@ -45,13 +56,12 @@ export default {
     }
 }
 
-.col-md-8{
+.col-md-8 {
     align-self: center;
 
-    .card-text{
+    .card-text {
         color: grey;
     }
 
 }
-
 </style>
