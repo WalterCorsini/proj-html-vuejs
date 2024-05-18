@@ -1,10 +1,12 @@
 <script>
+import Appheader from '../components/AppHeader.vue';
 import AppJumbotron from "../components/AppJumbotron.vue";
 import ContactOfficeAndForm from "../components/ContactOfficeAndForm.vue";
 import ContactMap from "../components/ContactMap.vue";
 import ContactSocialsAndNews from "../components/ContactSocialsAndNews.vue";
 import AppTopButton from "../components/AppTopButton.vue";
 import SideButtons from "../components/SideButtons.vue";
+import AppHeader from '../components/AppHeader.vue';
 
 export default{
     components: {
@@ -14,6 +16,7 @@ export default{
         ContactSocialsAndNews,
         AppTopButton,
         SideButtons,
+        AppHeader,
     },
     data(){
         return{
@@ -28,6 +31,7 @@ export default{
 
 <template>
 <main>
+    <AppHeader propColor="black" propBgColor="white"/>
     <AppJumbotron :propTitle="jumbo" />
     <ContactOfficeAndForm />
     <ContactMap />

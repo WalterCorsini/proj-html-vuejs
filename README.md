@@ -9,6 +9,8 @@ controllo di variabili funzioni colori e dipendenze necessarie
 divisione dei compiti
 riutilizzo di dati e componenti in comune.
 
+
+
 ## HOMEPAGE
 1) COMPONENTE: "HeroHomePage"
     - un array di foto e testo che scorreva mediante un carosello gestito a tempo o al click su dei bottoni agli estremi.

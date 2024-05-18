@@ -17,7 +17,7 @@ export default {
         // increment count to max
         generateCount() {
             if (this.viewCount <= this.count && this.viewCount+12 <= this.count) {
-                this.viewCount += 13;
+                this.viewCount += 12;
                 // if viewcount is <= to count call function with setTimeout
                 let nextCall = setTimeout(this.generateCount, 100);
             } else {

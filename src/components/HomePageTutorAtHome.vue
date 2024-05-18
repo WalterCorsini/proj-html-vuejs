@@ -20,7 +20,7 @@ export default {
                     ipsa tenetur illum.
                 </span>
                 <span class="mt-3">
-                    <a class="d-block" href="">SAPERNE DI PIU'</a>
+                    <a @click.stop class="d-block" href="#WhatWeDo">SAPERNE DI PIU'</a>
                 </span>
             </div>
             <div class="col-7">

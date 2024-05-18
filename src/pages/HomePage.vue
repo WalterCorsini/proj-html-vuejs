@@ -1,4 +1,5 @@
 <script>
+import AppHeader from "../components/AppHeader.vue";
 import HeroHomePage from "../components/HeroHomePage.vue";
 import HomePageTutor from "../components/HomePageTutor.vue";
 import HomePageTutorAtHome from "../components/HomePageTutorAtHome.vue";
@@ -16,6 +17,7 @@ import { store } from "../store";
 
 export default {
     components:{
+        AppHeader,
         HeroHomePage,
         HomePageTutor,
         HomePageTutorAtHome,
@@ -27,11 +29,12 @@ export default {
         HomePagePricing,
         HomePageLogoSlider,
         AppTopButton,
-        SideButtons
+        SideButtons,
     },
     data() {
         return {
             store,
+            color:"white",
         }
     },
 }
@@ -40,6 +43,7 @@ export default {
 <template>
     <AppTopButton />
     <SideButtons />
+    <AppHeader propColor="white" />
     <HeroHomePage />
     <HomePageTutor />
     <HomePageTutorAtHome />

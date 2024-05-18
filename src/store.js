@@ -41,6 +41,7 @@ export const store = reactive ({
             text: "andarono a chiamare un altro elefante"
         },
     ],
+    activeIndex: 0,
     usersCount:168,
     eventsCount:348,
     active:0,

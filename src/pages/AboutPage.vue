@@ -1,4 +1,5 @@
 <script>
+import Appheader from '../components/AppHeader.vue';
 import AboutPageTutorCard from '../components/AboutPageTutorCard.vue'
 import AboutPageFaq from '../components/AboutPageFaq.vue'
 import AppJumbotron from '../components/AppJumbotron.vue'
@@ -7,10 +8,11 @@ import { store } from '../store'
 import AppCount from '../components/AppCount.vue'
 import AppTopButton from '../components/AppTopButton.vue'
 import SideButtons from '../components/SideButtons.vue'
+import AppHeader from '../components/AppHeader.vue';
 
 
 export default {
-    components: { AboutPageTutorCard, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount, AppTopButton, SideButtons },
+    components: { AboutPageTutorCard, AboutPageFaq, AppJumbotron, HomePageStudent, AppCount, AppTopButton, SideButtons, AppHeader },
     data() {
         return {
 
@@ -74,7 +76,7 @@ export default {
 </script>
 
 <template>
-
+    <AppHeader propColor="black" propBgColor="white"/>
     <!-- Jumbotron -->
     <section>
         <AppJumbotron :propTitle="pageJumbotron"/>

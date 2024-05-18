@@ -1,17 +1,17 @@
 <script>
 import AppButton from "./AppButton.vue"
-export default{
-    components:{
-        AppButton,    
+export default {
+    components: {
+        AppButton,
     },
-    props:{
+    props: {
         propCard: Object,
     },
-    data(){
-        return{
+    data() {
+        return {
         }
     },
-    methods:{
+    methods: {
         getImage(elem) {
             return new URL(`../assets/img/home-page/sezione-1/${elem}.jpg`, import.meta.url).href;
         },
@@ -20,20 +20,20 @@ export default{
 </script>
 
 <template>
-        <div class="carousel-item h-100 w-100 active">
-                <img :src="getImage(propCard.img)" class="d-block w-100 h-100" alt="...">
-                <div class="hero-text
+    <div class="carousel-item h-100 w-100 active">
+        <img :src="getImage(propCard.img)" class="d-block w-100 h-100" alt="...">
+        <div class="hero-text
             d-flex flex-column justify-content-center align-items-center
             text-center w-100 h-100">
-                    <div class="small-container w-50">
-                        <h2 class="title-font"><strong>{{ propCard.title }}</strong></h2>
-                        <span>{{ propCard.subTitle }}</span>
-                        <div class="btn">
-                            <AppButton title="REGISTER NOW" />
-                        </div>
-                    </div>
+            <div class="small-container w-50">
+                <h2 class="title-font"><strong>{{ propCard.title }}</strong></h2>
+                <span>{{ propCard.subTitle }}</span>
+                <div class=" btn">
+                    <AppButton title="REGISTER NOW" />
                 </div>
             </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>

@@ -33,6 +33,9 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.container{
+    margin-top: 100px;    
+}
 section {
     background-image: url(../assets/img/contact_and_footer/contact-1.jpg);
     min-height: 300px;

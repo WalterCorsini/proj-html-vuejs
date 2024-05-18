@@ -87,7 +87,7 @@ export default {
 </script>
 
 <template>
-    <div class="container mb-1">
+    <div id="WhatWeDo" class="container mb-5">
         <div v-for="curElem, index in listArray" class="row">
             <!-- left-container -->
             <div @click.stop="active = index" class="col-3">

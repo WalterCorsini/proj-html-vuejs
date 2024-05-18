@@ -1,8 +1,14 @@
 <script>
+import { store } from '../store';
 export default {
+  props:{
+    propColor: String,
+    propBgColor: String,
+  },
   data() {
     return {
-      activeIndex: 0,
+      store,
+      colorActive:"rgb(64, 196, 255)",
       menu: [
         {
           title: "Home",
@@ -13,13 +19,12 @@ export default {
           title: "Chi Siamo",
           routeName: "about",
           isActive: false,
-
+          color: "white",
         },
         {
           title: "Contatti",
           routeName: "contacts",
           isActive: false,
-
         },
       ],
     }
@@ -30,15 +35,19 @@ export default {
 </script>
 
 <template>
-  <header class="container">
-    <div class="header-logo">
-      <img src="../assets/img/header/logo.png" alt="Logo iAcademy" />
+<header class="container-fluid" :style="{'backgroundColor' : `${propBgColor}`}">
+    <div class="header-logo" >
+      <img v-if="propColor==='black'" src="../assets/img/header/logo.png" alt="Logo iAcademy" />
+      <img v-else="propColor==='black'" src="../assets/img/header/logo1.png" alt="Logo iAcademy" />
     </div>
     <ul class="navigation">
-      <li v-for="(item, index) in menu">
-        <router-link :to="{ name: item.routeName }" class="nav-link" :class="{ 'blue': activeIndex === index }" @click="activeIndex = index">{{
-          item.title
-        }}</router-link>
+      <li v-for="(item, index) in menu"
+      >
+        <router-link :to="{ name: item.routeName }" id="blue" class="nav-link fw-bold fs-5"
+         @click.stop="store.activeIndex = index"
+         :style="{'color' : `${propColor}`}" :class="{ 'blue': store.activeIndex === index }">
+         {{item.title}}
+          </router-link>
       </li>
     </ul>
   </header>
@@ -49,9 +58,13 @@ export default {
 @use "../style/partials/variables" as *;
 
 
-.container {
+.container-fluid{
   @include flex(row, space-between, center, nowrap);
-  padding: 40px 0;
+  padding: 40px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 
   .header-logo{
     width: 200px;
@@ -65,13 +78,12 @@ export default {
 }
 
 .nav-link {
-  // color: black;
   position: relative;
   text-decoration: none;
 }
 
 .blue {
-  color: $primary-color;
+  color: $primary-color !important;
 }
 
 .nav-link::before {
