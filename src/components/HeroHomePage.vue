@@ -72,12 +72,12 @@ export default {
 
 #container-hero {
     position: relative;
-
+    
     .carousel-inner {
         position: relative;
         width: 100%;
-        height: 50vh;
-
+        height: 60vh;
+        
         .carousel-item {
             img {
                 position: absolute;
@@ -85,7 +85,7 @@ export default {
                 left: 0;
                 object-fit: cover;
             }
-
+            
             .hero-text {
                 position: relative;
                 z-index: 1;
